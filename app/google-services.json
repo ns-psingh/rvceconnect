@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "221582557732",
+    "firebase_url": "https://rvceconnect.firebaseio.com",
+    "project_id": "rvceconnect",
+    "storage_bucket": "rvceconnect.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:221582557732:android:e978a9eed916370d",
+        "android_client_info": {
+          "package_name": "com.example.premal2.rvceconnect"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "221582557732-op28gene8h6duhrca84i579gihckfhgj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.premal2.rvceconnect",
+            "certificate_hash": "25493ec25f65db75c2cb38f66b6eb6282d4ce4da"
+          }
+        },
+        {
+          "client_id": "221582557732-4s7c2jfb3uv8p0mefksolh0ks2240jig.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAtILu3tW0SQ84dJ0LfDK6k9WFGOYukPQM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "221582557732-4s7c2jfb3uv8p0mefksolh0ks2240jig.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
