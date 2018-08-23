@@ -52,6 +52,10 @@ public class MainActivity extends AppCompatActivity
                             finish();
                             startActivity(new Intent(getApplicationContext(),StudentFrontEnd.class));
                         }
+                        else
+                        {
+                            Log.d("e","failed");
+                        }
                     }
                 });
             }

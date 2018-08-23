@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.util.TypedValue;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -51,6 +52,8 @@ class subjectattendance
    /*total_classes_attended */
      int total_classes_attended;
 
+     /*percentage of classes attended */
+     int percentage;
 
      /*initialise the object parameters namely name,total_clsses,total_classes_attended*/
      public void init(String name,int total_classes,int total_classes_attended)
@@ -109,6 +112,35 @@ class subjectattendance
 
          /* Put the TextView in CardView */
          card.addView(tv);
+
+
+
+
+         /*create a progress bar */
+         ProgressBar progressBar=new ProgressBar(mContext);
+
+         /*calculate attendance percentage */
+         percentage = (total_classes_attended/total_classes)*100;
+
+       /*set the max value of progress bar to 100*/
+         progressBar.setMax(100);
+
+        /*set the min value of the progress bar */
+       // progressBar.setMin(0);
+
+         /*set the progress of the progress bar*/
+         progressBar.setProgress(percentage,true);
+
+
+
+
+
+
+
+
+
+
+
 
      }
 

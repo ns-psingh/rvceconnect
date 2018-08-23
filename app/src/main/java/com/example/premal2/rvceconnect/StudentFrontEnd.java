@@ -16,8 +16,8 @@ public class StudentFrontEnd extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_front_end);
         mAuth=FirebaseAuth.getInstance();
-        mAuth.signOut();
-        finish();
-        startActivity(new Intent(this,MainActivity.class));
+       // mAuth.signOut();
+      //  finish();
+      //  startActivity(new Intent(this,MainActivity.class));
     }
 }
