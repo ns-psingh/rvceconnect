@@ -60,7 +60,7 @@
                     android:layout_below="@id/img"
                     android:layout_marginEnd="5dp"
                     android:layout_marginRight="5dp"
-                    android:background="?attr/selectableItemBackgroundBorderless"
+
                     android:contentDescription="FavButtonDesc"
                     android:src="@drawable/ic_favorite_border_black_24dp" />
 
