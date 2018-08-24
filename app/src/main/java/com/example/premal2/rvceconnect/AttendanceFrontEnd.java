@@ -131,7 +131,7 @@ class subjectattendance
          /*set the progress of the progress bar*/
          progressBar.setProgress(percentage,true);
 
-
+        card.addView(progressBar);
 
 
 
