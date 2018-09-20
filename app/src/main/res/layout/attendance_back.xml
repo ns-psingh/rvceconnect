@@ -5,6 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
         <RelativeLayout
+            android:id="@+id/attendance_back_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -16,16 +17,6 @@
                 <!--android:scaleType="fitCenter"-->
                 <!--android:src="@drawable/attendance" />-->
 
-            <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@id/img"
-            android:layout_marginLeft="5dp"
-            android:layout_marginStart="5dp"
-            android:fontFamily="sans-serif"
-            android:gravity="center_vertical"
-            android:text="IF TEXT NEEDS TO BE ADDED"
-            android:textSize="18sp" />
 
             <!--<ImageButton-->
             <!--android:layout_width="wrap_content"-->

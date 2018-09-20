@@ -165,8 +165,11 @@ public class StudentFrontEnd extends AppCompatActivity
         if (attnShowingBack)
         {
             getFragmentManager().popBackStack();
+
             return;
         }
+
+
 
 
     getFragmentManager()
@@ -187,13 +190,18 @@ public class StudentFrontEnd extends AppCompatActivity
      just-incremented currentPage variable).*/
               .replace(R.id.attendancecontainer, new AttendanceBack())
 
+
             /* Add this transaction to the back stack, allowing users to press */
             /* Back to get to the front of the card.*/
             .addToBackStack(null)
 
     /* Commit the transaction. */
               .commit();
-         }
+
+
+
+
+    }
 
 
     private void scoreflipCard()
@@ -229,6 +237,12 @@ public class StudentFrontEnd extends AppCompatActivity
 
                 /* Commit the transaction. */
                 .commit();
+
+
+
+
+
+
     }
 
 
