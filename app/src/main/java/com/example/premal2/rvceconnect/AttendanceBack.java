@@ -203,6 +203,8 @@ public class AttendanceBack extends Fragment
 
           TableLayout parent_table_layout =prompt.findViewById(R.id.TableLayoutAttendanceBack);
 
+          parent_table_layout.setStretchAllColumns(true);
+
           TableRow   parent_row =new TableRow(prompt.getContext());
           parent_row.setLayoutParams(new TableRow.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 
@@ -218,7 +220,7 @@ public class AttendanceBack extends Fragment
            ntv2.setTextColor(Color.WHITE);
 
 
-           ntv.setText("Subject");
+           ntv.setText(" Subject");
            ntv1.setText(" Classes Attended");
            ntv2.setText(" Classes Held");
 
@@ -231,13 +233,13 @@ public class AttendanceBack extends Fragment
            parent_table_layout.addView(parent_row);
 
 
-         /* for(int i=0;i<1;i++)
+          for(int i=0;i<number_of_subjects;i++)
           {
 
             TableRow tr=new TableRow(prompt.getContext());
-            TableRow.LayoutParams lp=new TableRow.LayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+         /*   TableRow.LayoutParams lp=new TableRow.LayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 
-
+      */
             TextView tv=new TextView(prompt.getContext());
             TextView tv1=new TextView(prompt.getContext());
             TextView tv2=new TextView(prompt.getContext());
@@ -248,19 +250,20 @@ public class AttendanceBack extends Fragment
 
 
 
-            tv.setText(subjectnames.get(i));
+            tv.setText(" "+subjectnames.get(i));
+            tv1.setText(" \t"+classes_attended[i]);
+            tv2.setText(" \t"+classes_held[i]);
+
+
             tr.addView(tv);
-
-            tv1.setText(classes_attended[i]);
             tr.addView(tv1);
-
-            tv2.setText(classes_held[i]);
             tr.addView(tv2);
 
 
-            parent_table_layout.addView(tr,lp);
+            parent_table_layout.addView(tr);
 
-          } */
+
+          }
 
 
 //           builder.setPositiveButton("NEXT",
