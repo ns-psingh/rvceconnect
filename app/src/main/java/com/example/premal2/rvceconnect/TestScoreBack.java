@@ -194,6 +194,8 @@ public class TestScoreBack extends Fragment
 
 
                 cartesian.yScale().maximum(50);
+
+
                 anyChartView.setChart(cartesian);
 
 

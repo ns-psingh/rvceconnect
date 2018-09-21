@@ -3,6 +3,8 @@ package com.example.premal2.rvceconnect;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -24,6 +26,24 @@ public class StudentFrontEnd extends AppCompatActivity
     int attncount=0;
     int scorecount=0;
     int timetablecount=0;
+    int REQUEST_CODE=4;
+
+
+    private String [] permissions = {android.Manifest.permission.WRITE_EXTERNAL_STORAGE};
+
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults)
+    {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if(grantResults[0]== PackageManager.PERMISSION_GRANTED)
+        {
+        Log.i("Permission status","permission successful");
+            //resume tasks needing this permission
+        }
+    }
+
+
+
+
 
 
     @Override
@@ -32,6 +52,7 @@ public class StudentFrontEnd extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_front_end);
         mAuth=FirebaseAuth.getInstance();
+        ActivityCompat.requestPermissions(this,permissions, REQUEST_CODE);
 
 
 

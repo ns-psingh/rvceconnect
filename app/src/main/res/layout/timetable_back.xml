@@ -3,4 +3,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
+    <com.example.premal2.rvceconnect.TouchImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/timetableimage"
+        android:src="@drawable/ic_add_a_photo_black_24dp" />
+
+
+    <!--<ImageView-->
+        <!--android:id="@+id/timetableimage"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:src="@drawable/ic_add_a_photo_black_24dp" />-->
+
+
+
+
 </LinearLayout>
