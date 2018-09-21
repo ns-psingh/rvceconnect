@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,6 +38,8 @@ public class StudentFrontEnd extends AppCompatActivity
 
         if (savedInstanceState == null)
         {
+
+
             /*fill the attendance card view with the attendance front end*/
             getFragmentManager()
                     .beginTransaction()
@@ -71,19 +74,6 @@ public class StudentFrontEnd extends AppCompatActivity
             public void onClick(View view)
             {
 
-                attncount++;
-                attncount=attncount%2;
-                /*for all even clicks the front view must be restored and for all odd clicks
-                the backview will be restored*/
-                if(attncount!=0)
-                {
-                    attnShowingBack=false;
-                }
-                else
-                {
-                    attnShowingBack=true;
-                }
-
                 attnflipCard();
 
 
@@ -99,18 +89,6 @@ public class StudentFrontEnd extends AppCompatActivity
             public void onClick(View view)
             {
 
-                scorecount++;
-                scorecount=scorecount%2;
-                /*for all even clicks the front view must be restored and for all odd clicks
-                the backview will be restored*/
-                if(scorecount!=0)
-                {
-                    scoreShowingBack=false;
-                }
-                else
-                {
-                    scoreShowingBack=true;
-                }
 
                 scoreflipCard();
 
@@ -127,21 +105,8 @@ public class StudentFrontEnd extends AppCompatActivity
             public void onClick(View view)
             {
 
-                timetablecount++;
-                timetablecount=timetablecount%2;
-                /*for all even clicks the front view must be restored and for all odd clicks
-                the backview will be restored*/
-                if(timetablecount!=0)
-                {
-                    timetableShowingBack=false;
-                }
-                else
-                {
-                    timetableShowingBack=true;
-                }
 
                 timetableflipCard();
-
 
             }
         });
@@ -162,85 +127,78 @@ public class StudentFrontEnd extends AppCompatActivity
 
     private void attnflipCard()
     {
-        if (attnShowingBack)
+        if (!attnShowingBack)
         {
-            getFragmentManager().popBackStack();
 
-            return;
+            attnShowingBack=true;
+
+
+
+            getFragmentManager()
+                    .beginTransaction()
+
+                    /* Replace the default fragment animations with animator resources
+                    // representing rotations when switching to the back of the card, as
+                    // well as animator resources representing rotations when flipping
+                    // back to the front (e.g. when the system Back button is pressed). */
+                    .setCustomAnimations(
+                            R.animator.card_flip_right_in,
+                            R.animator.card_flip_right_out,
+                            R.animator.card_flip_left_in,
+                            R.animator.card_flip_left_out)
+
+                    /* Replace any fragments currently in the container view with a
+                     fragment representing the next page (indicated by the
+                     just-incremented currentPage variable).*/
+                    .replace(R.id.attendancecontainer, new AttendanceBack())
+
+
+                    /* Add this transaction to the back stack, allowing users to press */
+                    /* Back to get to the front of the card.*/
+                    .addToBackStack(null)
+
+                    /* Commit the transaction. */
+                    .commit();
+
+
         }
-
-
-
-
-    getFragmentManager()
-           .beginTransaction()
-
-    /* Replace the default fragment animations with animator resources
-    // representing rotations when switching to the back of the card, as
-    // well as animator resources representing rotations when flipping
-    // back to the front (e.g. when the system Back button is pressed). */
-              .setCustomAnimations(
-            R.animator.card_flip_right_in,
-            R.animator.card_flip_right_out,
-            R.animator.card_flip_left_in,
-            R.animator.card_flip_left_out)
-
-    /* Replace any fragments currently in the container view with a
-     fragment representing the next page (indicated by the
-     just-incremented currentPage variable).*/
-              .replace(R.id.attendancecontainer, new AttendanceBack())
-
-
-            /* Add this transaction to the back stack, allowing users to press */
-            /* Back to get to the front of the card.*/
-            .addToBackStack(null)
-
-    /* Commit the transaction. */
-              .commit();
-
-
-
-
     }
 
 
     private void scoreflipCard()
     {
-        if (scoreShowingBack)
+        if (!scoreShowingBack)
         {
-            getFragmentManager().popBackStack();
-            return;
+
+            scoreShowingBack=true;
+
+            getFragmentManager()
+                    .beginTransaction()
+
+                    /* Replace the default fragment animations with animator resources
+                    // representing rotations when switching to the back of the card, as
+                    // well as animator resources representing rotations when flipping
+                    // back to the front (e.g. when the system Back button is pressed). */
+                    .setCustomAnimations(
+                            R.animator.card_flip_right_in,
+                            R.animator.card_flip_right_out,
+                            R.animator.card_flip_left_in,
+                            R.animator.card_flip_left_out)
+
+                    /* Replace any fragments currently in the container view with a
+                     fragment representing the next page (indicated by the
+                     just-incremented currentPage variable).*/
+                    .replace(R.id.testscorecontainer, new TestScoreBack())
+
+                    /* Add this transaction to the back stack, allowing users to press */
+                    /* Back to get to the front of the card.*/
+                    .addToBackStack(null)
+
+                    /* Commit the transaction. */
+                    .commit();
+
+
         }
-
-
-        getFragmentManager()
-                .beginTransaction()
-
-                /* Replace the default fragment animations with animator resources
-                // representing rotations when switching to the back of the card, as
-                // well as animator resources representing rotations when flipping
-                // back to the front (e.g. when the system Back button is pressed). */
-                .setCustomAnimations(
-                        R.animator.card_flip_right_in,
-                        R.animator.card_flip_right_out,
-                        R.animator.card_flip_left_in,
-                        R.animator.card_flip_left_out)
-
-                /* Replace any fragments currently in the container view with a
-                 fragment representing the next page (indicated by the
-                 just-incremented currentPage variable).*/
-                .replace(R.id.testscorecontainer, new TestScoreBack())
-
-                /* Add this transaction to the back stack, allowing users to press */
-                /* Back to get to the front of the card.*/
-                .addToBackStack(null)
-
-                /* Commit the transaction. */
-                .commit();
-
-
-
-
 
 
     }
@@ -248,38 +206,52 @@ public class StudentFrontEnd extends AppCompatActivity
 
     private void timetableflipCard()
     {
-        if (timetableShowingBack)
-        {
-            getFragmentManager().popBackStack();
-            return;
+        if (!timetableShowingBack) {
+
+        timetableShowingBack=true;
+
+            getFragmentManager()
+                    .beginTransaction()
+
+                    /* Replace the default fragment animations with animator resources
+                    // representing rotations when switching to the back of the card, as
+                    // well as animator resources representing rotations when flipping
+                    // back to the front (e.g. when the system Back button is pressed). */
+                    .setCustomAnimations(
+                            R.animator.card_flip_right_in,
+                            R.animator.card_flip_right_out,
+                            R.animator.card_flip_left_in,
+                            R.animator.card_flip_left_out)
+
+                    /* Replace any fragments currently in the container view with a
+                     fragment representing the next page (indicated by the
+                     just-incremented currentPage variable).*/
+                    .replace(R.id.timetablecontainer, new TimetableBack())
+
+                    /* Add this transaction to the back stack, allowing users to press */
+                    /* Back to get to the front of the card.*/
+                    .addToBackStack(null)
+
+                    /* Commit the transaction. */
+                    .commit();
+
+             }
         }
 
 
-        getFragmentManager()
-                .beginTransaction()
+    public boolean onKeyDown(int keyCode, KeyEvent event)
+    {
+        if((keyCode==KeyEvent.KEYCODE_BACK))
+        {
+            attnShowingBack=false;
+            scoreShowingBack=false;
+            timetableShowingBack=false;
+        }
 
-                /* Replace the default fragment animations with animator resources
-                // representing rotations when switching to the back of the card, as
-                // well as animator resources representing rotations when flipping
-                // back to the front (e.g. when the system Back button is pressed). */
-                .setCustomAnimations(
-                        R.animator.card_flip_right_in,
-                        R.animator.card_flip_right_out,
-                        R.animator.card_flip_left_in,
-                        R.animator.card_flip_left_out)
-
-                /* Replace any fragments currently in the container view with a
-                 fragment representing the next page (indicated by the
-                 just-incremented currentPage variable).*/
-                .replace(R.id.timetablecontainer, new TimetableBack())
-
-                /* Add this transaction to the back stack, allowing users to press */
-                /* Back to get to the front of the card.*/
-                .addToBackStack(null)
-
-                /* Commit the transaction. */
-                .commit();
+        return super.onKeyDown(keyCode,event);
     }
+
+
 
 
 }

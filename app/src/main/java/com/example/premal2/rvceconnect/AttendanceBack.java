@@ -228,6 +228,7 @@ public class AttendanceBack extends Fragment
            parent_row.addView(ntv1);
            parent_row.addView(ntv2);
 
+           parent_row.setGravity(Gravity.CENTER_HORIZONTAL);
 
 
            parent_table_layout.addView(parent_row);
@@ -244,6 +245,10 @@ public class AttendanceBack extends Fragment
             TextView tv1=new TextView(prompt.getContext());
             TextView tv2=new TextView(prompt.getContext());
 
+
+            tv1.setGravity(Gravity.CENTER_HORIZONTAL);
+            tv2.setGravity(Gravity.CENTER_HORIZONTAL);
+
             tv.setTextColor(Color.WHITE);
             tv1.setTextColor(Color.WHITE);
             tv2.setTextColor(Color.WHITE);
@@ -258,6 +263,8 @@ public class AttendanceBack extends Fragment
             tr.addView(tv);
             tr.addView(tv1);
             tr.addView(tv2);
+            tr.setGravity(Gravity.CENTER_HORIZONTAL);
+
 
 
             parent_table_layout.addView(tr);
