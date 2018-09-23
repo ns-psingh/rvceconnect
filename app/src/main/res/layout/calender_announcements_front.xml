@@ -1,27 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/backnewmaterial">
 
-        <TextView
+        <com.tomer.fadingtextview.FadingTextView
+            android:id="@+id/fadingText"
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:text="TIME TABLE"
-            android:background="@android:color/transparent"
-            android:gravity="center"
             android:textSize="50dp"
-            android:typeface="sans"
-            android:textStyle="italic"
+            android:gravity="center"
             android:layout_centerInParent="true"
             android:textAlignment="center"
-            android:textColor="#000000" />
+            android:textAllCaps="true"
+            android:typeface="sans"
+            android:textStyle="italic"
+            android:textColor="#000000"
+            android:background="@android:color/transparent"
+            app:texts="@array/calender"
+            app:timeout="3000"/>
 
     </RelativeLayout>
+
+
+
+
+
+
+
+
+
 
 
 

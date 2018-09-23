@@ -29,6 +29,7 @@ public class StudentFrontEnd extends AppCompatActivity
     boolean scoreShowingBack;
     boolean timetableShowingBack;
     boolean transcriptsShowingBack;
+    boolean calenderannouncementsShowingBack;
     int attncount=0;
     int scorecount=0;
     int timetablecount=0;
@@ -101,6 +102,11 @@ public class StudentFrontEnd extends AppCompatActivity
                     .add(R.id.transcriptscontainer, new TranscriptsFrontEnd())
                     .commit();
 
+            getFragmentManager()
+                    .beginTransaction()
+                    .add(R.id.announcements, new CalenderAnnouncementsFront())
+                    .commit();
+
 
 
         }
@@ -113,6 +119,7 @@ public class StudentFrontEnd extends AppCompatActivity
         View scorebtnFlip = findViewById(R.id.testscorecontainer);
         View timetablebtnFlip = findViewById(R.id.timetablecontainer);
         final View transcriptsFlip =findViewById(R.id.transcriptscontainer);
+        View announcementsFlip =findViewById(R.id.announcements);
 
 
         /*set an on click listener to lister to any clicks on the card*/
@@ -166,6 +173,15 @@ public class StudentFrontEnd extends AppCompatActivity
 
 
                 transflipCard();
+            }
+        });
+
+        announcementsFlip.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                CalAnnouncementsflipCard();
             }
         });
 
@@ -337,6 +353,54 @@ public class StudentFrontEnd extends AppCompatActivity
         }
     }
 
+    private void CalAnnouncementsflipCard()
+    {
+        if (!calenderannouncementsShowingBack)
+        {
+
+            calenderannouncementsShowingBack=true;
+
+
+
+            getFragmentManager()
+                    .beginTransaction()
+
+                    /* Replace the default fragment animations with animator resources
+                    // representing rotations when switching to the back of the card, as
+                    // well as animator resources representing rotations when flipping
+                    // back to the front (e.g. when the system Back button is pressed). */
+                    .setCustomAnimations(
+                            R.animator.card_flip_right_in,
+                            R.animator.card_flip_right_out,
+                            R.animator.card_flip_left_in,
+                            R.animator.card_flip_left_out)
+
+                    /* Replace any fragments currently in the container view with a
+                     fragment representing the next page (indicated by the
+                     just-incremented currentPage variable).*/
+                    .replace(R.id.announcements, new CalenderAnnouncementsBack())
+
+
+                    /* Add this transaction to the back stack, allowing users to press */
+                    /* Back to get to the front of the card.*/
+                    .addToBackStack(null)
+
+                    /* Commit the transaction. */
+                    .commit();
+
+
+        }
+    }
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -349,6 +413,7 @@ public class StudentFrontEnd extends AppCompatActivity
             scoreShowingBack=false;
             timetableShowingBack=false;
             transcriptsShowingBack=false;
+            calenderannouncementsShowingBack=false;
 
         }
 

@@ -3,4 +3,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/buttonsmallback">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:text="PERFORMANCE ANALYTICS"
+            android:typeface="sans"
+            android:textStyle="italic"
+            android:background="@android:color/transparent"
+            android:gravity="center"
+            android:textSize="30dp"
+            android:layout_centerInParent="true"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF" />
+    </RelativeLayout>
+
+
+
+
 </LinearLayout>

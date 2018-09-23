@@ -3,4 +3,22 @@
     <integer name="card_flip_time_full">1000</integer>
     <integer name="card_flip_time_half">500</integer>
 
+    <string-array name="attendance">
+    <item>ATTENDANCE</item>
+    <item>UPDATES</item>
+    </string-array>
+
+
+    <string-array name="testscore">
+        <item>TEST SCORE</item>
+        <item>UPDATES</item>
+    </string-array>
+
+
+    <string-array name="calender">
+        <item>CALENDER</item>
+        <item>NEW EVENTS</item>
+    </string-array>
+
+
 </resources>

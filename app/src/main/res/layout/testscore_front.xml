@@ -1,23 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/buttonsmallback">
-
-        <TextView
+        <com.tomer.fadingtextview.FadingTextView
+            android:id="@+id/fadingText"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:text="TEST SCORE"
-            android:background="@android:color/transparent"
-            android:gravity="center"
+            android:layout_height="200dp"
             android:textSize="50dp"
+            android:gravity="center"
             android:layout_centerInParent="true"
             android:textAlignment="center"
-            android:textColor="#FFFFFF" />
+            android:textAllCaps="true"
+            android:typeface="sans"
+            android:textStyle="italic"
+            android:textColor="#FFFFFF"
+            android:background="@android:color/transparent"
+            app:texts="@array/testscore"
+            app:timeout="3000"/>
     </RelativeLayout>
 
 </LinearLayout>

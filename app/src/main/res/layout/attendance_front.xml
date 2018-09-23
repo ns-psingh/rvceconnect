@@ -8,19 +8,36 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/buttonsmallback">
+            android:background="@drawable/backnewmaterial">
 
-            <TextView
+            <!--<TextView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:text="ATTENDANCE"-->
+                <!--android:background="@android:color/transparent"-->
+                <!--android:gravity="center"-->
+                <!--android:textSize="50dp"-->
+                <!--android:layout_centerInParent="true"-->
+                <!--android:textAlignment="center"-->
+                <!--android:typeface="sans"-->
+                <!--android:textStyle="italic"-->
+                <!--android:textColor="#000000" />-->
+
+            <com.tomer.fadingtextview.FadingTextView
+                android:id="@+id/fadingText"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:text="ATTENDANCE"
-                android:background="@android:color/transparent"
-                android:gravity="center"
+                android:layout_height="200dp"
                 android:textSize="50dp"
+                android:gravity="center"
                 android:layout_centerInParent="true"
                 android:textAlignment="center"
-                android:textColor="#FFFFFF" />
-
+                android:textAllCaps="true"
+                android:typeface="sans"
+                android:textStyle="italic"
+                android:textColor="#000000"
+                android:background="@android:color/transparent"
+                app:texts="@array/attendance"
+                app:timeout="3000"/>
 
 
             <!--<ImageView-->
