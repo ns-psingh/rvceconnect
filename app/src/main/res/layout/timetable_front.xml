@@ -5,15 +5,19 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@drawable/buttonsmallback">
 
-        <ImageView
-            android:id="@+id/img3"
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:contentDescription="CardImageViewDesc"
-            android:scaleType="fitCenter"
-            android:src="@drawable/timetable" />
+            android:layout_height="100dp"
+            android:text="TIME TABLE"
+            android:background="@android:color/transparent"
+            android:gravity="center"
+            android:textSize="50dp"
+            android:layout_centerInParent="true"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF" />
 
     </RelativeLayout>
 

@@ -1,14 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <com.example.premal2.rvceconnect.TouchImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/timetableimage"
         android:src="@drawable/ic_add_a_photo_black_24dp" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/updateTimeTableButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:clickable="true"
+            app:srcCompat="@drawable/ic_add_a_photo_black_24dp" />
+
+    </RelativeLayout>
 
 
     <!--<ImageView-->

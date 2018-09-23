@@ -1,48 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#5b29a2"
+    android:id="@+id/student_front_end_parent"
     android:backgroundTint="@android:color/darker_gray"
     android:orientation="vertical"
     tools:context=".StudentFrontEnd">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:alpha="1"
-        android:background="#5b29a2"
-        android:orientation="vertical">
+    <ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:backgroundTint="@android:color/darker_gray">
 
-
-        <android.support.v7.widget.CardView
-            android:id="@+id/attendancecontainer"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="250dp"
-            android:layout_marginLeft="3dp"
-            android:clickable="true"
-            app:cardBackgroundColor="@android:color/white"
-            app:cardCornerRadius="20dp"
-            app:cardElevation="0.7dp"
-            app:cardMaxElevation="1dp"
-            app:cardPreventCornerOverlap="true"
-            app:cardUseCompatPadding="true"
-            app:contentPadding="10dp"
-            app:contentPaddingBottom="0dp">
+            android:layout_height="wrap_content"
+            android:alpha="1"
+            android:orientation="vertical"
+            android:background="@drawable/craftbackgroundcolor">
 
-            <!--<RelativeLayout-->
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/attendancecontainer"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_marginLeft="3dp"
+                android:clickable="true"
+                app:cardBackgroundColor="@android:color/white"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0.7dp"
+                app:cardMaxElevation="1dp"
+                app:cardPreventCornerOverlap="true"
+                app:cardUseCompatPadding="true"
+                app:contentPadding="10dp"
+                app:contentPaddingBottom="0dp">
+
+                <!--<RelativeLayout-->
                 <!--android:layout_width="match_parent"-->
                 <!--android:layout_height="match_parent">-->
 
                 <!--<ImageView-->
-                    <!--android:id="@+id/img"-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="match_parent"-->
-                    <!--android:contentDescription="CardImageViewDesc"-->
-                    <!--android:scaleType="fitCenter"-->
-                    <!--android:src="@drawable/attendance" />-->
+                <!--android:id="@+id/img"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:contentDescription="CardImageViewDesc"-->
+                <!--android:scaleType="fitCenter"-->
+                <!--android:src="@drawable/attendance" />-->
 
                 <!--&lt;!&ndash;<TextView&ndash;&gt;-->
                 <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
@@ -67,62 +73,89 @@
                 <!--&lt;!&ndash;android:contentDescription="FavButtonDesc"&ndash;&gt;-->
                 <!--&lt;!&ndash;android:src="@drawable/ic_favorite_border_black_24dp" />&ndash;&gt;-->
 
-            <!--</RelativeLayout>-->
+                <!--</RelativeLayout>-->
 
-        </android.support.v7.widget.CardView>
+            </android.support.v7.widget.CardView>
 
-        <android.support.v7.widget.CardView
-            android:id="@+id/testscorecontainer"
-            android:layout_width="match_parent"
-            android:layout_height="250dp"
-            android:layout_marginLeft="3dp"
-            android:clickable="true"
-            app:cardBackgroundColor="@android:color/white"
-            app:cardCornerRadius="20dp"
-            app:cardElevation="0.7dp"
-            app:cardMaxElevation="1dp"
-            app:cardPreventCornerOverlap="true"
-            app:cardUseCompatPadding="true"
-            app:contentPadding="10dp"
-            app:contentPaddingBottom="0dp">
+            <android.support.v7.widget.CardView
+                android:id="@+id/testscorecontainer"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_marginLeft="3dp"
+                android:clickable="true"
+                app:cardBackgroundColor="@android:color/white"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0.7dp"
+                app:cardMaxElevation="1dp"
+                app:cardPreventCornerOverlap="true"
+                app:cardUseCompatPadding="true"
+                app:contentPadding="10dp"
+                app:contentPaddingBottom="0dp">
 
-            <!--<RelativeLayout-->
+                <!--<RelativeLayout-->
                 <!--android:layout_width="match_parent"-->
                 <!--android:layout_height="match_parent">-->
 
                 <!--<ImageView-->
-                    <!--android:id="@+id/img2"-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="match_parent"-->
-                    <!--android:layout_alignParentStart="true"-->
-                    <!--android:layout_alignParentTop="true"-->
-                    <!--android:contentDescription="CardImageViewDesc"-->
-                    <!--android:scaleType="fitCenter"-->
-                    <!--android:src="@drawable/testscore" />-->
-            <!--</RelativeLayout>-->
+                <!--android:id="@+id/img2"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_alignParentStart="true"-->
+                <!--android:layout_alignParentTop="true"-->
+                <!--android:contentDescription="CardImageViewDesc"-->
+                <!--android:scaleType="fitCenter"-->
+                <!--android:src="@drawable/testscore" />-->
+                <!--</RelativeLayout>-->
 
-        </android.support.v7.widget.CardView>
+            </android.support.v7.widget.CardView>
 
-        <android.support.v7.widget.CardView
-            android:id="@+id/timetablecontainer"
-            android:layout_width="match_parent"
-            android:layout_height="250dp"
-            android:layout_marginLeft="3dp"
-            android:clickable="true"
-            app:cardBackgroundColor="@android:color/white"
-            app:cardCornerRadius="20dp"
-            app:cardElevation="0.7dp"
-            app:cardMaxElevation="1dp"
-            app:cardPreventCornerOverlap="true"
-            app:cardUseCompatPadding="true"
-            app:contentPadding="10dp"
-            app:contentPaddingBottom="0dp">
+            <android.support.v7.widget.CardView
+                android:id="@+id/timetablecontainer"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_marginLeft="3dp"
+                android:clickable="true"
+                app:cardBackgroundColor="@android:color/white"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0.7dp"
+                app:cardMaxElevation="1dp"
+                app:cardPreventCornerOverlap="true"
+                app:cardUseCompatPadding="true"
+                app:contentPadding="10dp"
+                app:contentPaddingBottom="0dp"></android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/transcriptscontainer"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_marginLeft="3dp"
+                android:clickable="true"
+                app:cardBackgroundColor="@android:color/white"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0.7dp"
+                app:cardMaxElevation="1dp"
+                app:cardPreventCornerOverlap="true"
+                app:cardUseCompatPadding="true"
+                app:contentPadding="10dp"
+                app:contentPaddingBottom="0dp"></android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/announcements"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_marginLeft="3dp"
+                android:clickable="true"
+                app:cardBackgroundColor="@android:color/white"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0.7dp"
+                app:cardMaxElevation="1dp"
+                app:cardPreventCornerOverlap="true"
+                app:cardUseCompatPadding="true"
+                app:contentPadding="10dp"
+                app:contentPaddingBottom="0dp"></android.support.v7.widget.CardView>
 
 
-
-        </android.support.v7.widget.CardView>
-
-
-    </LinearLayout>
-
+        </LinearLayout>
 </ScrollView>
+
+</LinearLayout>

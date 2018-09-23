@@ -6,9 +6,12 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityCompat;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -32,6 +35,9 @@ public class TimetableBack extends Fragment
     SharedPreferences sharedPreferences;
     String MY_PREF="TIMETABLE-URL";
     String pathtag="filepath";
+    boolean updatebuttonvisibility=false;
+    FloatingActionButton fab;
+
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState)
     {
@@ -39,16 +45,24 @@ public class TimetableBack extends Fragment
 
        timetablebackview= inflater.inflate(R.layout.timetable_back, container, false);
        timetableimage = (TouchImageView)timetablebackview.findViewById(R.id.timetableimage);
+       fab=(FloatingActionButton)timetablebackview.findViewById(R.id.updateTimeTableButton);
+
        sharedPreferences=timetablebackview.getContext().getSharedPreferences(MY_PREF, Context.MODE_PRIVATE);
+       String restoredText = sharedPreferences.getString(pathtag,null);
 
-      String restoredText = sharedPreferences.getString(pathtag,null);
+       fab.setVisibility(View.GONE);
+       fab.setBackgroundDrawable(new ColorDrawable(Color.WHITE));
+       fab.setAlpha((float) 0.6);
 
-      Log.i("Text","Text Restored");
+
+
+       Log.i("Text","Text Restored");
       if(restoredText!=null)
       {
 
           timetableimage.setImageBitmap(BitmapFactory.decodeFile(restoredText));
           timetableimage.setScaleType(ImageView.ScaleType.FIT_XY);
+          fab.setVisibility(View.VISIBLE);
 
       }
         else
@@ -61,9 +75,28 @@ public class TimetableBack extends Fragment
                   Intent galleryIntent = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);// Start the Intent
 
                   startActivityForResult(galleryIntent, RESULT_LOAD_IMG);
+
+
               }
           });
+
+
+
           }
+
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view)
+            {
+                Intent galleryIntent = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);// Start the Intent
+
+                startActivityForResult(galleryIntent, RESULT_LOAD_IMG);
+
+
+            }
+        });
+
+
 
        return  timetablebackview;
     }
@@ -77,6 +110,7 @@ public class TimetableBack extends Fragment
 
         super.onActivityResult(requestCode, resultCode, data);
 
+        fab.setVisibility(View.VISIBLE);
         if (requestCode == RESULT_LOAD_IMG && resultCode == RESULT_OK && null != data)
         {
             Uri selectedImage = data.getData();

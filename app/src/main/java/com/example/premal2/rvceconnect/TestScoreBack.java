@@ -30,8 +30,7 @@ import java.util.List;
 public class TestScoreBack extends Fragment
 {
 
-    public View onCreateView(final LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState)
+    public View onCreateView(final LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
         /*inflate the testscore backend*/
         final View testscorebackview=inflater.inflate(R.layout.testscore_back, container, false);
@@ -491,7 +490,26 @@ public class TestScoreBack extends Fragment
 
 
                 cartesian.yScale().maximum(10);
+
+
+
                 anyChartView.setChart(cartesian);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -725,24 +743,6 @@ public class TestScoreBack extends Fragment
 
             }
         });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         super_parent_layout.addView(quiz1,params);
