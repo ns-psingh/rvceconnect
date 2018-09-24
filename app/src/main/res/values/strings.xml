@@ -20,5 +20,11 @@
         <item>NEW EVENTS</item>
     </string-array>
 
+    <string-array name="loginpage">
+        <item>WELCOME TO RVCE CONNECT</item>
+        <item>PLEASE ENTER CREDENTIALS TO LOGIN INTO THE APP</item>
+        <item>MAKE SURE YOU ARE CONNECTED TO COLLEGE WIFI</item>
+    </string-array>
+
 
 </resources>

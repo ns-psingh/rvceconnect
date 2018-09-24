@@ -444,6 +444,9 @@ public class StudentFrontEnd extends AppCompatActivity
 
 
             case R.id.item2:
+                  mAuth.signOut();
+
+                  startActivity(new Intent(StudentFrontEnd.this,MainActivity.class));
 
                 return true;
 
