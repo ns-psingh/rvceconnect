@@ -17,20 +17,34 @@ public class CalenderAnnouncementsBack extends Fragment
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
 
+        View view=inflater.inflate(R.layout.calender_announcements_back, container, false);
+
+
+
+
+
+        return  view;
+    }
+
+
+    public void calenderpop(int begintime,int endtime,String title)
+    {
+
         Calendar calendarEvent = Calendar.getInstance();
         Intent intent = new Intent(Intent.ACTION_EDIT);
         intent.setType("vnd.android.cursor.item/event");
-        intent.putExtra("beginTime", calendarEvent.getTimeInMillis());
-        intent.putExtra("endTime", calendarEvent.getTimeInMillis() + 60 * 60 * 1000);
-        intent.putExtra("title", "Sample Event");
+      //intent.putExtra("beginTime", calendarEvent.getTimeInMillis());
+        intent.putExtra("beginTime", begintime);
+        //intent.putExtra("endTime", calendarEvent.getTimeInMillis() + 60 * 60 * 1000);
+        // intent.putExtra("endTime", calendarEvent.getTimeInMillis() + 60 * 60 * 1000);
+
+        intent.putExtra("title", title);
         intent.putExtra("allDay", true);
         intent.putExtra("rule", "FREQ=YEARLY");
         startActivity(intent);
-
-
-
-
-        return inflater.inflate(R.layout.calender_announcements_back, container, false);
     }
+
+
+
 
 }

@@ -20,7 +20,12 @@
         </activity>
         <activity android:name=".StudentFrontEnd" />
         <activity android:name=".AttendanceFrontEnd" />
-        <activity android:name=".AboutActivity"></activity>
+        <activity android:name=".AboutActivity" />
+        <activity
+            android:name=".TeacherFrontEnd"
+            android:label="@string/title_activity_teacher_front_end" />
+        <activity android:name=".TeacherAttendanceUpdate" />
+        <activity android:name=".counsellor_student_view"></activity>
     </application>
 
 </manifest>

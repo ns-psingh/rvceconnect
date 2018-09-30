@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -61,5 +62,24 @@ public class MainActivity extends AppCompatActivity
                 });
             }
         });
+
+
+        TextView forgot=(TextView)findViewById(R.id.forgot);
+
+        forgot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view)
+            {
+
+                Intent i=new Intent(MainActivity.this,TeacherFrontEnd.class);
+
+                startActivity(i);
+            }
+        });
+
+
+
+
+
     }
 }

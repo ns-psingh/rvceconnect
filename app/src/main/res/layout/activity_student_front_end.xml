@@ -152,7 +152,8 @@
                 app:cardPreventCornerOverlap="true"
                 app:cardUseCompatPadding="true"
                 app:contentPadding="10dp"
-                app:contentPaddingBottom="0dp"></android.support.v7.widget.CardView>
+                app:contentPaddingBottom="0dp">
+            </android.support.v7.widget.CardView>
 
 
         </LinearLayout>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:orientation="vertical"
+    tools:context=".TeacherFrontEnd">
+
+
+   <LinearLayout
+       android:orientation="vertical"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_weight="0.95"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/teacherfrontendcontainer"
+        android:animateLayoutChanges="true"
+        android:background="@drawable/backnewmaterial">
+
+    </RelativeLayout>
+
+
+
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_weight="0.15"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginStart="0dp"
+        android:background="?android:attr/windowBackground"
+        app:menu="@menu/navigation" />
+
+   </LinearLayout>
+
+</ScrollView>

@@ -77,9 +77,6 @@
         android:textAlignment="center"
         android:textColor="@android:color/white"
         android:text="Facing Issues in signing in?" />
-
-
-   
-        />
+    />
 
 </RelativeLayout>
