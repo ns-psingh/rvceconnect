@@ -25,7 +25,8 @@
             android:name=".TeacherFrontEnd"
             android:label="@string/title_activity_teacher_front_end" />
         <activity android:name=".TeacherAttendanceUpdate" />
-        <activity android:name=".counsellor_student_view"></activity>
+        <activity android:name=".counsellor_student_view" />
+        <activity android:name=".TeacherStudentGaurdianContact"></activity>
     </application>
 
 </manifest>
