@@ -4,6 +4,7 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.os.AsyncTask;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -15,10 +16,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.vansuita.materialabout.builder.AboutBuilder;
 import com.vansuita.materialabout.views.AboutView;
+
+import org.jsoup.Jsoup;
 
 public class StudentFrontEnd extends AppCompatActivity
 {
@@ -55,14 +59,15 @@ public class StudentFrontEnd extends AppCompatActivity
 
 
 
-
+    ProgressBar x;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_front_end);
-
+        x=(ProgressBar) findViewById(R.id.fetching);
+        new tempval().execute();
      //   AboutView view =new AboutBuilder(this);
         mAuth=FirebaseAuth.getInstance();
 
@@ -454,7 +459,56 @@ public class StudentFrontEnd extends AppCompatActivity
                 return super.onOptionsItemSelected(item);
         }
     }
+    public class tempval extends AsyncTask<Void,Void,Void>
+    {
+        @Override
+        protected void onPreExecute()
+        {
+            x.setVisibility(View.VISIBLE);
+            super.onPreExecute();
+        }
+        @Override
+        protected Void doInBackground(Void... voids)
+        {
+            String url="https://rvconnect.000webhostapp.com/connect.php?query=SELECT%20coursewise.course,coursewise.classatd,coursewise.totalclass%20FROM%20student_pro%20INNER%20JOIN%20coursewise%20ON%20student_pro.p_usn=coursewise.usn%20WHERE%20student_pro.rvcemailid=%27premalsingh.cs16@rvce.edu.in%27";
+            Log.d("e","works fine");
+            try {
+                org.jsoup.nodes.Document document = Jsoup.connect(url).get();
+                Log.d("e","works fine");
+                Log.d("r",document.getElementById("s1a").text());
+                Log.d("e","works fine");
+                AttendanceBack.classes_attended[0]=Integer.parseInt(document.getElementById("s1a").text());
+                Log.d("r",AttendanceBack.classes_attended[0]+" ");
+                AttendanceBack.classes_attended[1]=Integer.parseInt(document.getElementById("s2a").text());
+                AttendanceBack.classes_attended[2]=Integer.parseInt(document.getElementById("s3a").text());
+                AttendanceBack.classes_attended[3]=Integer.parseInt(document.getElementById("s4a").text());
+                AttendanceBack.classes_attended[4]=Integer.parseInt(document.getElementById("s5a").text());
+                AttendanceBack.classes_attended[5]=Integer.parseInt(document.getElementById("s6a").text());
+                AttendanceBack.classes_attended[6]=Integer.parseInt(document.getElementById("s7a").text());
+                AttendanceBack.classes_held[0]=Integer.parseInt(document.getElementById("s1t").text());
+                AttendanceBack.classes_held[1]=Integer.parseInt(document.getElementById("s2t").text());
+                AttendanceBack.classes_held[2]=Integer.parseInt(document.getElementById("s3t").text());
+                AttendanceBack.classes_held[3]=Integer.parseInt(document.getElementById("s4t").text());
+                AttendanceBack.classes_held[4]=Integer.parseInt(document.getElementById("s5t").text());
+                AttendanceBack.classes_held[5]=Integer.parseInt(document.getElementById("s6t").text());
+                AttendanceBack.classes_held[6]=Integer.parseInt(document.getElementById("s7t").text());
 
+
+            }
+            catch (Exception e)
+            {
+                e.printStackTrace();
+                Log.d("e","problem");
+            }
+            return null;
+        }
+        @Override
+        protected void onPostExecute(Void aVoid)
+        {
+            x.setVisibility(View.INVISIBLE);
+            super.onPostExecute(aVoid);
+        }
+    }
 
 
 
