@@ -470,7 +470,7 @@ public class StudentFrontEnd extends AppCompatActivity
         @Override
         protected Void doInBackground(Void... voids)
         {
-            String url="https://rvconnect.000webhostapp.com/connect.php?query=SELECT%20coursewise.course,coursewise.classatd,coursewise.totalclass%20FROM%20student_pro%20INNER%20JOIN%20coursewise%20ON%20student_pro.p_usn=coursewise.usn%20WHERE%20student_pro.rvcemailid=%27premalsingh.cs16@rvce.edu.in%27";
+            String url="https://rvconnect.000webhostapp.com/connect.php?query=SELECT coursewise.course,coursewise.classatd,coursewise.totalclass,coursewise.quiz1,coursewise.test1,coursewise.quiz2,coursewise.test2,coursewise.quiz3,coursewise.test3 FROM student_pro INNER JOIN coursewise ON student_pro.p_usn=coursewise.usn WHERE student_pro.rvcemailid='premalsingh.cs16@rvce.edu.in'";
             Log.d("e","works fine");
             try {
                 org.jsoup.nodes.Document document = Jsoup.connect(url).get();
@@ -492,7 +492,51 @@ public class StudentFrontEnd extends AppCompatActivity
                 AttendanceBack.classes_held[4]=Integer.parseInt(document.getElementById("s5t").text());
                 AttendanceBack.classes_held[5]=Integer.parseInt(document.getElementById("s6t").text());
                 AttendanceBack.classes_held[6]=Integer.parseInt(document.getElementById("s7t").text());
+                TestScoreBack.quiz1_score[0]=Integer.parseInt(document.getElementById("s1q1").text());
+                TestScoreBack.quiz1_score[1]=Integer.parseInt(document.getElementById("s2q1").text());
+                TestScoreBack.quiz1_score[2]=Integer.parseInt(document.getElementById("s3q1").text());
+                TestScoreBack.quiz1_score[3]=Integer.parseInt(document.getElementById("s4q1").text());
+                TestScoreBack.quiz1_score[4]=Integer.parseInt(document.getElementById("s5q1").text());
+                TestScoreBack.quiz1_score[5]=Integer.parseInt(document.getElementById("s6q1").text());
+                TestScoreBack.quiz1_score[6]=Integer.parseInt(document.getElementById("s7q1").text());
 
+                TestScoreBack.test1_score[0]=Integer.parseInt(document.getElementById("s1t1").text());
+                TestScoreBack.test1_score[1]=Integer.parseInt(document.getElementById("s2t1").text());
+                TestScoreBack.test1_score[2]=Integer.parseInt(document.getElementById("s3t1").text());
+                TestScoreBack.test1_score[3]=Integer.parseInt(document.getElementById("s4t1").text());
+                TestScoreBack.test1_score[4]=Integer.parseInt(document.getElementById("s5t1").text());
+                TestScoreBack.test1_score[5]=Integer.parseInt(document.getElementById("s6t1").text());
+                TestScoreBack.test1_score[6]=Integer.parseInt(document.getElementById("s7t1").text());
+                TestScoreBack.quiz2_score[0]=Integer.parseInt(document.getElementById("s1q2").text());
+                TestScoreBack.quiz2_score[1]=Integer.parseInt(document.getElementById("s2q2").text());
+                TestScoreBack.quiz2_score[2]=Integer.parseInt(document.getElementById("s3q2").text());
+                TestScoreBack.quiz2_score[3]=Integer.parseInt(document.getElementById("s4q2").text());
+                TestScoreBack.quiz2_score[4]=Integer.parseInt(document.getElementById("s5q2").text());
+                TestScoreBack.quiz2_score[5]=Integer.parseInt(document.getElementById("s6q2").text());
+                TestScoreBack.quiz2_score[6]=Integer.parseInt(document.getElementById("s7q2").text());
+
+                TestScoreBack.test2_score[0]=Integer.parseInt(document.getElementById("s1t2").text());
+                TestScoreBack.test2_score[1]=Integer.parseInt(document.getElementById("s2t2").text());
+                TestScoreBack.test2_score[2]=Integer.parseInt(document.getElementById("s3t2").text());
+                TestScoreBack.test2_score[3]=Integer.parseInt(document.getElementById("s4t2").text());
+                TestScoreBack.test2_score[4]=Integer.parseInt(document.getElementById("s5t2").text());
+                TestScoreBack.test2_score[5]=Integer.parseInt(document.getElementById("s6t2").text());
+                TestScoreBack.test2_score[6]=Integer.parseInt(document.getElementById("s7t2").text());
+                TestScoreBack.quiz3_score[0]=Integer.parseInt(document.getElementById("s1q3").text());
+                TestScoreBack.quiz3_score[1]=Integer.parseInt(document.getElementById("s2q3").text());
+                TestScoreBack.quiz3_score[2]=Integer.parseInt(document.getElementById("s3q3").text());
+                TestScoreBack.quiz3_score[3]=Integer.parseInt(document.getElementById("s4q3").text());
+                TestScoreBack.quiz3_score[4]=Integer.parseInt(document.getElementById("s5q3").text());
+                TestScoreBack.quiz3_score[5]=Integer.parseInt(document.getElementById("s6q3").text());
+                TestScoreBack.quiz3_score[6]=Integer.parseInt(document.getElementById("s7q3").text());
+
+                TestScoreBack.test3_score[0]=Integer.parseInt(document.getElementById("s1t3").text());
+                TestScoreBack.test3_score[1]=Integer.parseInt(document.getElementById("s2t3").text());
+                TestScoreBack.test3_score[2]=Integer.parseInt(document.getElementById("s3t3").text());
+                TestScoreBack.test3_score[3]=Integer.parseInt(document.getElementById("s4t3").text());
+                TestScoreBack.test3_score[4]=Integer.parseInt(document.getElementById("s5t3").text());
+                TestScoreBack.test3_score[5]=Integer.parseInt(document.getElementById("s6t3").text());
+                TestScoreBack.test3_score[6]=Integer.parseInt(document.getElementById("s7t3").text());
 
             }
             catch (Exception e)
