@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,6 +27,9 @@ import com.anychart.enums.Anchor;
 import com.anychart.enums.MarkerType;
 import com.anychart.enums.TooltipPositionMode;
 import com.anychart.graphics.vector.Stroke;
+import com.jjoe64.graphview.GraphView;
+import com.jjoe64.graphview.series.DataPoint;
+import com.jjoe64.graphview.series.LineGraphSeries;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -92,6 +96,7 @@ public class TranscriptsBackEnd extends Fragment
                     anyChartView.setProgressBar(prompt.findViewById(R.id.progress_bar));
 
 
+
                     Cartesian cartesian = AnyChart.line();
 
                     cartesian.animation(true);
@@ -111,7 +116,6 @@ public class TranscriptsBackEnd extends Fragment
 
                     cartesian.yAxis(0).title("SGPA");
                     cartesian.xAxis(0).labels().padding(5d, 5d, 5d, 5d);
-
 
                     List<DataEntry> seriesData = new ArrayList<>();
 
@@ -174,7 +178,8 @@ public class TranscriptsBackEnd extends Fragment
                     anyChartView.setChart(cartesian);
 
 
-/*                    GraphView graph = (GraphView) transcriptBackendView.findViewById(R.id.graph);
+                    Log.d("e","works so far");
+                  /*  GraphView graph = (GraphView) transcriptBackendView.findViewById(R.id.graph);
                     LineGraphSeries<DataPoint> series = new LineGraphSeries<DataPoint>(new DataPoint[]
                             {
                                     new DataPoint(0, 1),
@@ -183,7 +188,7 @@ public class TranscriptsBackEnd extends Fragment
                                     new DataPoint(3, 2),
                                     new DataPoint(4, 6)
                             });
-                    graph.addSeries(series);*/
+                    graph.addSeries(series);
 
 
 
@@ -211,12 +216,12 @@ public class TranscriptsBackEnd extends Fragment
 
 
                     builder.show();
-
+*/
 
                 }
                 catch (Exception e)
                 {
-
+                    Log.d("e","doesnt work");
 
                     e.printStackTrace();
                 }
