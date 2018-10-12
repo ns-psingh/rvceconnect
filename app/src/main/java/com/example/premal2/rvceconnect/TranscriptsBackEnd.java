@@ -27,9 +27,6 @@ import com.anychart.enums.Anchor;
 import com.anychart.enums.MarkerType;
 import com.anychart.enums.TooltipPositionMode;
 import com.anychart.graphics.vector.Stroke;
-import com.jjoe64.graphview.GraphView;
-import com.jjoe64.graphview.series.DataPoint;
-import com.jjoe64.graphview.series.LineGraphSeries;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -159,7 +156,7 @@ public class TranscriptsBackEnd extends Fragment
                             .offsetY(5d);
 
                     Line series3 = cartesian.line(series3Mapping);
-                    series3.name("Topper's SGPA");
+                    series3.name("Topper\\'s SGPA");
                     series3.hovered().markers().enabled(true);
                     series3.hovered().markers()
                             .type(MarkerType.CIRCLE)
