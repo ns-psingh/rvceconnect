@@ -18,10 +18,24 @@
       android:divider="@android:color/transparent"
       android:dividerHeight="10.0sp"
       android:layout_width="match_parent"
-      android:layout_height="match_parent">
-
+      android:layout_weight="1.2"
+      android:layout_height="0dp">
 
   </ListView>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:id="@+id/instasms"
+        android:text="SEND NOTIFICATION"
+        android:layout_gravity="center"
+        android:textColor="#FFFFFF"
+        android:layout_weight="0.2"
+        android:paddingBottom="5dp"
+       android:backgroundTint="@android:color/holo_purple"
+        android:layout_height="0dp" />
+
+
+
 </LinearLayout>
 
 

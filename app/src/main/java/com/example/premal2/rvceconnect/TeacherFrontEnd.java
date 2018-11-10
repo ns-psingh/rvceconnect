@@ -37,9 +37,6 @@ public class TeacherFrontEnd extends AppCompatActivity {
                     selectedFragment = TeacherCounsel.newInstance();
                     break;
 
-                case R.id.navigation_notifications:
-                    selectedFragment = TeacherAnnouncements.newInstance();
-                    break;
 
             }
 

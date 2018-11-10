@@ -67,7 +67,7 @@ public class StudentFrontEnd extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_front_end);
 //        x=(ProgressBar) findViewById(R.id.fetching);
-        new tempval().execute();
+   //     new tempval().execute();
      //   AboutView view =new AboutBuilder(this);
         mAuth=FirebaseAuth.getInstance();
 

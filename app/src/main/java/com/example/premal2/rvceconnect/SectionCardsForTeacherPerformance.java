@@ -2,11 +2,11 @@ package com.example.premal2.rvceconnect;
 
 import java.util.ArrayList;
 
-public class SectionCardsForTeacherHome
+public class SectionCardsForTeacherPerformance
 {
 
     String sectionname,subjectname;
-    ArrayList<String> studentnames;
+    ArrayList<Integer> studentmarks;
 
 
     public String getSectionname()
@@ -29,14 +29,21 @@ public class SectionCardsForTeacherHome
         this.subjectname = name;
     }
 
-    public void setStudentnames(ArrayList<String> studentnames)
+    public void setStudentmarks(ArrayList<Integer> studentnames)
     {
-        this.studentnames = studentnames;
+        this.studentmarks = studentnames;
     }
 
-    public ArrayList<String> getStudentnames()
+    public ArrayList<Integer> getStudentmarks()
     {
-        return studentnames;
+        return studentmarks;
     }
+
+
+
+
+
 
 }
+
+

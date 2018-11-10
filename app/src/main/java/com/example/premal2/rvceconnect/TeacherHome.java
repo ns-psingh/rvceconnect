@@ -29,8 +29,6 @@ public class TeacherHome extends Fragment
         super.onCreate(savedInstanceState);
 
 
-
-
     }
 
     @Override
@@ -61,28 +59,28 @@ public class TeacherHome extends Fragment
         String[] name_of_subject=new String[]{"IPR","BIG DATA","ALGORITHM","DATA STRUCTURES"};
 
         /*DUMMY*/
+        /*retrieve all the student names from the sections  and create arrays*/
         String[] studentnames=new String[]{"Sai praveen","Premal Singh","Shubham Phal","Sai Shourie","Anjan Kumar"};
         /*write query string to retrieve data from the  database */
 
-        ArrayList<String> studentnameslist=new ArrayList<>();
+        ArrayList<ArrayList<String>> studentnameslist=new ArrayList<>();
 
-
-        studentnameslist.addAll(Arrays.asList(studentnames));
-
+        for(int i=0;i<name_of_section.length;i++)
+        {
+            studentnameslist.add(new ArrayList<String>(Arrays.asList(studentnames)));
+        }
 
 
 
 
         int number_of_subjects_handled=name_of_section.length;
 
-
-
         for(int i=0;i<number_of_subjects_handled;i++)
         {
             s=new SectionCardsForTeacherHome();
             s.setSectionname(name_of_section[i]);
             s.setSubjectname(name_of_subject[i]);
-            s.setStudentnames(studentnameslist);
+            s.setStudentnames(studentnameslist.get(i));
             sections.add(s);
         }
 

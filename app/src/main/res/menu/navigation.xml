@@ -9,20 +9,11 @@
     <item
         android:id="@+id/navigation_performance_dashboard"
         android:icon="@drawable/ic_dashboard_black_24dp"
-        android:title="Performance Analytics" />
-
+        android:title="Performance" />
 
     <item
         android:id="@+id/navigation_counsel"
         android:icon="@drawable/ic_people_black_24dp"
         android:title="Counsel" />
-
-    <item
-        android:id="@+id/navigation_notifications"
-        android:icon="@drawable/ic_add_alert_black_24dp"
-        android:title="Broadcast" />
-
-
-
 
 </menu>

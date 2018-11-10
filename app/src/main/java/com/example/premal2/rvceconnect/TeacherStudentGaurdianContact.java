@@ -7,8 +7,21 @@ public class TeacherStudentGaurdianContact extends AppCompatActivity
 {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_teacher_student_gaurdian_contact);
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }
