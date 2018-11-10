@@ -57,11 +57,13 @@ public class TeacherHome extends Fragment
         SectionCardsForTeacherHome s=new SectionCardsForTeacherHome();
 
         String[] name_of_section=new String[]{"5C","7A","4B","3D"};
+
         String[] name_of_subject=new String[]{"IPR","BIG DATA","ALGORITHM","DATA STRUCTURES"};
 
         /*DUMMY*/
         String[] studentnames=new String[]{"Sai praveen","Premal Singh","Shubham Phal","Sai Shourie","Anjan Kumar"};
         /*write query string to retrieve data from the  database */
+
         ArrayList<String> studentnameslist=new ArrayList<>();
 
 

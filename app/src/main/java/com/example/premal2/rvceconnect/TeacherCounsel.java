@@ -35,11 +35,12 @@ public class TeacherCounsel extends Fragment
 
         studentnames.add("SHUBHAM");
         studentnames.add("PREMAL");
+        studentnames.add("SAI SHORIE");
 
         View view =inflater.inflate(R.layout.counsel_list_layout, container, false);
 
 
-        ListView lv=view.findViewById(R.id.counsellingstudentlist);
+      final  ListView lv=view.findViewById(R.id.counsellingstudentlist);
 
 
         ArrayAdapter<String> attadapter=new ArrayAdapter<String>(getContext(),R.layout.card_for_teacher_counsel,R.id.studentnamedisplay,studentnames);
@@ -52,11 +53,14 @@ public class TeacherCounsel extends Fragment
 
 
 
-     lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+     lv.setOnItemClickListener(new AdapterView.OnItemClickListener()
+     {
          @Override
-         public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+         public void onItemClick(AdapterView<?> adapterView, View view, int i, long l)
+         {
 
-             Log.i("CLICKED","CLICK");
+             Log.i("ITEM NAME",lv.getItemAtPosition(i).toString());
+
              startActivity(new Intent(getActivity().getApplicationContext(),TeacherStudentGaurdianContact.class));
 
              return;

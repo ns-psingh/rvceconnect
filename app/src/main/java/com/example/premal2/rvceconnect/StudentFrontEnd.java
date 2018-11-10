@@ -22,7 +22,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.vansuita.materialabout.builder.AboutBuilder;
 import com.vansuita.materialabout.views.AboutView;
 
-import org.jsoup.Jsoup;
+//import org.jsoup.Jsoup;
 
 public class StudentFrontEnd extends AppCompatActivity
 {
@@ -66,7 +66,7 @@ public class StudentFrontEnd extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_front_end);
-        x=(ProgressBar) findViewById(R.id.fetching);
+//        x=(ProgressBar) findViewById(R.id.fetching);
         new tempval().execute();
      //   AboutView view =new AboutBuilder(this);
         mAuth=FirebaseAuth.getInstance();
@@ -470,7 +470,7 @@ public class StudentFrontEnd extends AppCompatActivity
         @Override
         protected Void doInBackground(Void... voids)
         {
-            String url="https://rvconnect.000webhostapp.com/connect.php?query=SELECT coursewise.course,coursewise.classatd,coursewise.totalclass,coursewise.quiz1,coursewise.test1,coursewise.quiz2,coursewise.test2,coursewise.quiz3,coursewise.test3 FROM student_pro INNER JOIN coursewise ON student_pro.p_usn=coursewise.usn WHERE student_pro.rvcemailid='premalsingh.cs16@rvce.edu.in'";
+    /*            String url="https://rvconnect.000webhostapp.com/connect.php?query=SELECT coursewise.course,coursewise.classatd,coursewise.totalclass,coursewise.quiz1,coursewise.test1,coursewise.quiz2,coursewise.test2,coursewise.quiz3,coursewise.test3 FROM student_pro INNER JOIN coursewise ON student_pro.p_usn=coursewise.usn WHERE student_pro.rvcemailid='premalsingh.cs16@rvce.edu.in'";
             Log.d("e","works fine");
             try {
                 org.jsoup.nodes.Document document = Jsoup.connect(url).get();
@@ -543,7 +543,7 @@ public class StudentFrontEnd extends AppCompatActivity
             {
                 e.printStackTrace();
                 Log.d("e","problem");
-            }
+            }*/
             return null;
         }
         @Override
