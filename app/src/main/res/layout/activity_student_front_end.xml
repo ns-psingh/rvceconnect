@@ -124,37 +124,6 @@
                 app:contentPadding="10dp"
                 app:contentPaddingBottom="0dp"></android.support.v7.widget.CardView>
 
-            <android.support.v7.widget.CardView
-                android:id="@+id/transcriptscontainer"
-                android:layout_width="match_parent"
-                android:layout_height="250dp"
-                android:layout_marginLeft="3dp"
-                android:clickable="true"
-                app:cardBackgroundColor="@android:color/white"
-                app:cardCornerRadius="20dp"
-                app:cardElevation="0.7dp"
-                app:cardMaxElevation="1dp"
-                app:cardPreventCornerOverlap="true"
-                app:cardUseCompatPadding="true"
-                app:contentPadding="10dp"
-                app:contentPaddingBottom="0dp"></android.support.v7.widget.CardView>
-
-            <android.support.v7.widget.CardView
-                android:id="@+id/announcements"
-                android:layout_width="match_parent"
-                android:layout_height="250dp"
-                android:layout_marginLeft="3dp"
-                android:clickable="true"
-                app:cardBackgroundColor="@android:color/white"
-                app:cardCornerRadius="20dp"
-                app:cardElevation="0.7dp"
-                app:cardMaxElevation="1dp"
-                app:cardPreventCornerOverlap="true"
-                app:cardUseCompatPadding="true"
-                app:contentPadding="10dp"
-                app:contentPaddingBottom="0dp">
-            </android.support.v7.widget.CardView>
-
 
         </LinearLayout>
 </ScrollView>

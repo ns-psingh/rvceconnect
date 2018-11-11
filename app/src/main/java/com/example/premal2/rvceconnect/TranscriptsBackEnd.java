@@ -185,7 +185,7 @@ public class TranscriptsBackEnd extends Fragment
                                     new DataPoint(3, 2),
                                     new DataPoint(4, 6)
                             });
-                    graph.addSeries(series);
+                    graph.addSeries(series); */
 
 
 
@@ -213,7 +213,7 @@ public class TranscriptsBackEnd extends Fragment
 
 
                     builder.show();
-*/
+
 
                 }
                 catch (Exception e)
