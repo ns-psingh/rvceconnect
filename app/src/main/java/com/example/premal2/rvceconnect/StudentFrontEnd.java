@@ -1,5 +1,6 @@
 package com.example.premal2.rvceconnect;
 
+import android.Manifest;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.Intent;
@@ -41,7 +42,7 @@ public class StudentFrontEnd extends AppCompatActivity
 
 
     /*An array that contains the list of permissions required by the app*/
-    private String [] permissions = {android.Manifest.permission.WRITE_EXTERNAL_STORAGE};
+    private String [] permissions = {android.Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.SEND_SMS};
 
 
 
