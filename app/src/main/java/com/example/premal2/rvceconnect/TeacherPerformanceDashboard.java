@@ -51,26 +51,33 @@ public class TeacherPerformanceDashboard extends Fragment
 
         SectionCardsForTeacherPerformance s;
 
+        /*retrieve all the sections that the teacher teaches */
         String[] name_of_section=new String[]{"5C","7A","4B","3D"};
 
+       /*retrive the name of the subjects that the teacher teaches*/
         String[] name_of_subject=new String[]{"IPR","BIG DATA","ALGORITHM","DATA STRUCTURES"};
 
-        /*DUMMY*/
-        /*retrieve all the student names from the sections  and create arrays*/
+
+       /*retrieve the marks of all the students the teacher Teaches. You can create multiple arraylists and add them*/
         ArrayList<Integer> studentmarks=new ArrayList<>();
         studentmarks.add(40);
         studentmarks.add(30);
         studentmarks.add(45);
         studentmarks.add(15);
         studentmarks.add(29);
-        /*write query string to retrieve data from the  database */
+
 
         ArrayList<ArrayList<Integer>> studentnameslist=new ArrayList<>();
 
+       /*currently i am just adding the same arraylist */
         for(int i=0;i<name_of_section.length;i++)
         {
             studentnameslist.add(studentmarks);
         }
+
+        /*modify only the code above to perform retrieval*/
+
+
 
 
         int number_of_subjects_handled=name_of_section.length;

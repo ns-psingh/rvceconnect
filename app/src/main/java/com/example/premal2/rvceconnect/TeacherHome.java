@@ -54,14 +54,14 @@ public class TeacherHome extends Fragment
 
         SectionCardsForTeacherHome s=new SectionCardsForTeacherHome();
 
+        /*retrieve all the sections that a teacher teaches */
         String[] name_of_section=new String[]{"5C","7A","4B","3D"};
 
+       /*retrieve the name of the subjects  of sections that the teacher teaches */
         String[] name_of_subject=new String[]{"IPR","BIG DATA","ALGORITHM","DATA STRUCTURES"};
 
-        /*DUMMY*/
-        /*retrieve all the student names from the sections  and create arrays*/
+       /*retrive the names of the students in each section and add it in the same order to the list */
         String[] studentnames=new String[]{"Sai praveen","Premal Singh","Shubham Phal","Sai Shourie","Anjan Kumar"};
-        /*write query string to retrieve data from the  database */
 
         ArrayList<ArrayList<String>> studentnameslist=new ArrayList<>();
 
