@@ -31,8 +31,11 @@ import java.math.*;
 public class AttendanceBack extends Fragment
 {
 
+  static  int[] classes_attended=new int[]{0,0,0,0,0,0,0};
+  static int[] classes_held=new int[]{1,1,1,1,1,1,1};
     public View onCreateView(final LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
+      Log.d("e","fuck");
 
       /*color of progress bar*/
       int[] progress_color=new int[]{Color.BLUE,Color.MAGENTA,Color.YELLOW,Color.RED,Color.GREEN,Color.CYAN};
@@ -43,11 +46,11 @@ public class AttendanceBack extends Fragment
 
 
        /*temporary array that holds the number of classes attended*/
-       final int[] classes_attended =new int[]{12,3,5,7,13,8,9};
+      // final int[] classes_attended =new int[]{12,3,5,7,13,8,9};
 
 
        /*temporary array that holds the total number of classes held*/
-       final int[] classes_held =new int[]{13,13,13,13,13,13,13};
+     //  final int[] classes_held =new int[]{13,13,13,13,13,13,13};
 
       /*Arraylist that holds the list of subjects */
       final ArrayList<String> subjectnames = new ArrayList<>();
