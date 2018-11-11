@@ -23,6 +23,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.vansuita.materialabout.builder.AboutBuilder;
 import com.vansuita.materialabout.views.AboutView;
 
+import org.jsoup.Jsoup;
+
 //import org.jsoup.Jsoup;
 
 public class StudentFrontEnd extends AppCompatActivity
@@ -68,7 +70,7 @@ public class StudentFrontEnd extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_front_end);
 //        x=(ProgressBar) findViewById(R.id.fetching);
-   //     new tempval().execute();
+       new tempval().execute();
      //   AboutView view =new AboutBuilder(this);
         mAuth=FirebaseAuth.getInstance();
 
@@ -121,6 +123,7 @@ public class StudentFrontEnd extends AppCompatActivity
             @Override
             public void onClick(View view)
             {
+
 
                 attnflipCard();
 
@@ -175,6 +178,7 @@ public class StudentFrontEnd extends AppCompatActivity
     {
         if (!attnShowingBack)
         {
+
 
             attnShowingBack=true;
 
@@ -341,20 +345,23 @@ public class StudentFrontEnd extends AppCompatActivity
         @Override
         protected void onPreExecute()
         {
-            x.setVisibility(View.VISIBLE);
+        //    x.setVisibility(View.VISIBLE);
             super.onPreExecute();
         }
         @Override
         protected Void doInBackground(Void... voids)
         {
-    /*            String url="https://rvconnect.000webhostapp.com/connect.php?query=SELECT coursewise.course,coursewise.classatd,coursewise.totalclass,coursewise.quiz1,coursewise.test1,coursewise.quiz2,coursewise.test2,coursewise.quiz3,coursewise.test3 FROM student_pro INNER JOIN coursewise ON student_pro.p_usn=coursewise.usn WHERE student_pro.rvcemailid='premalsingh.cs16@rvce.edu.in'";
+            //            String url="https://rvconnect.000webhostapp.com/connect.php?query=SELECT coursewise.course,coursewise.classatd,coursewise.totalclass,coursewise.quiz1,coursewise.test1,coursewise.quiz2,coursewise.test2,coursewise.quiz3,coursewise.test3 FROM student_pro INNER JOIN coursewise ON student_pro.p_usn=coursewise.usn WHERE student_pro.rvcemailid='premalsingh.cs16@rvce.edu.in'";
+            String url="http://192.168.43.110/connect.php?query=SELECT%20course_cgpa.courseid,course_cgpa.classatd,course_cgpa.totalclass,course_cgpa.quiz1,course_cgpa.test1,course_cgpa.quiz2,course_cgpa.test2,course_cgpa.quiz3,course_cgpa.test3%20FROM%20student_pro%20INNER%20JOIN%20course_cgpa%20ON%20student_pro.usn=course_cgpa.usn%20WHERE%20student_pro.rvcemailid=%27premalsingh.cs16@rvce.edu.in%27";
+
             Log.d("e","works fine");
             try {
                 org.jsoup.nodes.Document document = Jsoup.connect(url).get();
                 Log.d("e","works fine");
-                Log.d("r",document.getElementById("s1a").text());
+                Log.d("r",document.getElementById("s1t").text());
                 Log.d("e","works fine");
                 AttendanceBack.classes_attended[0]=Integer.parseInt(document.getElementById("s1a").text());
+                Log.d("e","works fine");
                 Log.d("r",AttendanceBack.classes_attended[0]+" ");
                 AttendanceBack.classes_attended[1]=Integer.parseInt(document.getElementById("s2a").text());
                 AttendanceBack.classes_attended[2]=Integer.parseInt(document.getElementById("s3a").text());
@@ -369,6 +376,7 @@ public class StudentFrontEnd extends AppCompatActivity
                 AttendanceBack.classes_held[4]=Integer.parseInt(document.getElementById("s5t").text());
                 AttendanceBack.classes_held[5]=Integer.parseInt(document.getElementById("s6t").text());
                 AttendanceBack.classes_held[6]=Integer.parseInt(document.getElementById("s7t").text());
+                Log.d("e","works fine3");
                 TestScoreBack.quiz1_score[0]=Integer.parseInt(document.getElementById("s1q1").text());
                 TestScoreBack.quiz1_score[1]=Integer.parseInt(document.getElementById("s2q1").text());
                 TestScoreBack.quiz1_score[2]=Integer.parseInt(document.getElementById("s3q1").text());
@@ -414,19 +422,19 @@ public class StudentFrontEnd extends AppCompatActivity
                 TestScoreBack.test3_score[4]=Integer.parseInt(document.getElementById("s5t3").text());
                 TestScoreBack.test3_score[5]=Integer.parseInt(document.getElementById("s6t3").text());
                 TestScoreBack.test3_score[6]=Integer.parseInt(document.getElementById("s7t3").text());
-
+                Log.d("e","works fucking good till here");
             }
             catch (Exception e)
             {
                 e.printStackTrace();
                 Log.d("e","problem");
-            }*/
+            }
             return null;
         }
         @Override
         protected void onPostExecute(Void aVoid)
         {
-            x.setVisibility(View.INVISIBLE);
+          //  x.setVisibility(View.INVISIBLE);
             super.onPostExecute(aVoid);
         }
     }

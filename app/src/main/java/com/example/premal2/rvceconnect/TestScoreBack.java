@@ -37,6 +37,13 @@ import java.util.List;
 public class TestScoreBack extends Fragment
 {
 
+
+    static int[] test1_score=new int[]{0,0,0,0,0,0,0};
+    static int[] test2_score=new int[]{0,0,0,0,0,0,0};
+    static int[] test3_score=new int[]{0,0,0,0,0,0,0};
+    static int[] quiz1_score=new int[]{0,0,0,0,0,0,0};
+    static int[] quiz2_score=new int[]{0,0,0,0,0,0,0};
+    static int[] quiz3_score=new int[]{0,0,0,0,0,0,0};
     public View onCreateView(final LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
         /*inflate the testscore backend*/
@@ -53,25 +60,25 @@ public class TestScoreBack extends Fragment
 
 
         /*scores of test1*/
-        final int[]  test1_score=new int[]{50,40,45,48,46,43,45};
+    //    final int[]  test1_score=new int[]{50,40,45,48,46,43,45};
 
         /*scores of test2 */
-        final int[] test2_score =new int[]{0,0,0,0,0,0,0};
+    //    final int[] test2_score =new int[]{0,0,0,0,0,0,0};
 
 
         /*scores of test3*/
-        final int[] test3_score =new int[]{0,0,0,0,0,0,0};
+    //    final int[] test3_score =new int[]{0,0,0,0,0,0,0};
 
         /*score of quiz 1*/
-        final int[] quiz1_score =new int[]{10,10,8,9,10,9,5};
+     //   final int[] quiz1_score =new int[]{10,10,8,9,10,9,5};
 
 
         /*score of quiz2*/
-        final int[] quiz2_score =new int[]{0,0,0,0,0,0,0};
+      //  final int[] quiz2_score =new int[]{0,0,0,0,0,0,0};
 
 
         /*score of quiz3 */
-        final int[] quiz3_score =new int[]{0,0,0,0,0,0,0};
+      //  final int[] quiz3_score =new int[]{0,0,0,0,0,0,0};
 
 
 
