@@ -23,7 +23,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.vansuita.materialabout.builder.AboutBuilder;
 import com.vansuita.materialabout.views.AboutView;
 
-import org.jsoup.Jsoup;
+//import org.jsoup.Jsoup;
 
 //import org.jsoup.Jsoup;
 
@@ -356,7 +356,7 @@ public class StudentFrontEnd extends AppCompatActivity
 
             Log.d("e","works fine");
             try {
-                org.jsoup.nodes.Document document = Jsoup.connect(url).get();
+     /*           org.jsoup.nodes.Document document = Jsoup.connect(url).get();
                 Log.d("e","works fine");
                 Log.d("r",document.getElementById("s1t").text());
                 Log.d("e","works fine");
@@ -422,7 +422,7 @@ public class StudentFrontEnd extends AppCompatActivity
                 TestScoreBack.test3_score[4]=Integer.parseInt(document.getElementById("s5t3").text());
                 TestScoreBack.test3_score[5]=Integer.parseInt(document.getElementById("s6t3").text());
                 TestScoreBack.test3_score[6]=Integer.parseInt(document.getElementById("s7t3").text());
-                Log.d("e","works fucking good till here");
+                Log.d("e","works good till here"); */
             }
             catch (Exception e)
             {
