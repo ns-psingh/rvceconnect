@@ -20,6 +20,7 @@ public class TeacherAttendanceUpdate extends AppCompatActivity
 {
 
     ArrayList<String> studentnamelist;
+
     ListView lv;
     boolean select=true;
     String allpresent ="EVERY ONE IS PRESENT";
@@ -35,7 +36,6 @@ public class TeacherAttendanceUpdate extends AppCompatActivity
 
 
         studentnamelist=(ArrayList<String>)getIntent().getSerializableExtra("studentnameslist");
-
 
 
 
@@ -173,6 +173,7 @@ public class TeacherAttendanceUpdate extends AppCompatActivity
               if(Build.VERSION.SDK_INT >=Build.VERSION_CODES.LOLLIPOP)
               {
                   alertbuilder= new AlertDialog.Builder(TeacherAttendanceUpdate.this,android.R.style.Theme_Material_Dialog_Alert);
+
               }
               else
               {
@@ -229,6 +230,8 @@ public class TeacherAttendanceUpdate extends AppCompatActivity
              public void onClick(DialogInterface dialogInterface, int i)
              {
 
+                 /*update the attendance of the students present */
+                 /*use the studentspresntlist for this purpose */
 
              }
                   });

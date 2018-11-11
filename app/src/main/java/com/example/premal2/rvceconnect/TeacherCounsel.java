@@ -41,12 +41,21 @@ public class TeacherCounsel extends Fragment
     {
 
 
-    /*query to retrieve USN, name and phone number of the student */
+    /*query to retrieve name and phone number of the students under the teachers counsel */
 
         final HashMap<String,String> name_phone =new HashMap<>();
         name_phone.put("SHUBHAM","8830800912");
         name_phone.put("PREMAL","8982625174");
         name_phone.put("SAI SHOURIE","8830800912");
+
+     /*modify only the above section */
+
+
+
+
+
+
+
 
 
         View view =inflater.inflate(R.layout.counsel_list_layout, container, false);
@@ -172,6 +181,8 @@ public class TeacherCounsel extends Fragment
 
         SmsManager manager = SmsManager.getDefault();
         manager.sendTextMessage(phonenumber, null, message, null, null);
+
+
     }
 
 
