@@ -3,6 +3,7 @@ package com.example.premal2.rvceconnect;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -14,13 +15,18 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 
+import org.jsoup.Jsoup;
+
 import java.util.ArrayList;
+import java.util.ListIterator;
 
 public class TeacherAttendanceUpdate extends AppCompatActivity
 {
 
     ArrayList<String> studentnamelist;
 
+    ArrayList<String> presentstudents=new ArrayList<>();
+    public int p[]=new int[6];
     ListView lv;
     boolean select=true;
     String allpresent ="EVERY ONE IS PRESENT";
@@ -128,7 +134,6 @@ public class TeacherAttendanceUpdate extends AppCompatActivity
           public void onClick(View view)
           {
 
-             ArrayList<String> presentstudents=new ArrayList<>();
              ArrayList<String> absentstudents=new ArrayList<>();
 
 
@@ -229,7 +234,28 @@ public class TeacherAttendanceUpdate extends AppCompatActivity
              @Override
              public void onClick(DialogInterface dialogInterface, int i)
              {
+                 //int p[]=new int[6];
+                 int i2=0;
+                 int j=0;
+                 Log.d("e","entered");
+                 for(String s: presentstudents)
+                 {
 
+                     while(!s.equals(TeacherHome.studentnames[i2]))
+                     {Log.d("e",s);
+                     i2++;
+                     }
+                     Log.d("e",s+" "+TeacherHome.studentnames[i2]);
+                     p[j]=i2;
+                     //Log.d("e",p[j]+" ");
+                     i2++;
+                     j++;
+                 }
+                 for(j=0;j<6;j++)
+                     Log.d("e",p[j]+"");
+                 Log.d("e","students num="+presentstudents.size());
+
+                 new tempval().execute();
                  /*update the attendance of the students present */
                  /*use the studentspresntlist for this purpose */
 
@@ -260,6 +286,51 @@ public class TeacherAttendanceUpdate extends AppCompatActivity
 
 
 
+    }
+    public class tempval extends AsyncTask<Void,Void,Void>
+    {
+        @Override
+        protected void onPreExecute()
+        {
+            super.onPreExecute();
+        }
+        @Override
+        protected Void doInBackground(Void... voids)
+        {
+            Log.d("e","came here too");
+            int i;
+            String url;
+            String url2;
+            for(i=0;i<presentstudents.size();i++) {
+                url = "http://192.168.43.110/connect5.php?query=UPDATE%20course_cgpa%20SET%20classatd=classatd%2B1%20WHERE%20usn=%27" + TeacherHome.studentusn[p[i]] + "%27%20AND%20courseid=%2716HSI51%27";
+                url2 = "http://192.168.43.110/connect5.php?query=UPDATE%20course_cgpa%20SET%20totalclass=totalclass%2B1%20WHERE%20usn=%27" + TeacherHome.studentusn[p[i]] + "%27%20AND%20courseid=%2716HSI51%27";
+                //Log.d("e", url);
+
+                //  String url2="http://192.168.43.110/connect4.php?query=SELECT%20student_personal.firstname,student_personal.lastname%20FROM%20student_pro,student_personal%20WHERE%20student_pro.usn=student_personal.usn%20AND%20student_pro.sem=%275C%27";
+                try {
+                  //  Log.d("e", "works fne1");
+                    org.jsoup.nodes.Document document = Jsoup.connect(url).get();
+                    org.jsoup.nodes.Document document1=Jsoup.connect(url2).get();
+                    //  org.jsoup.nodes.Document document1=Jsoup.connect(url2).get();
+                    Log.d("e", url+"and"+url2);
+                    //   Log.d("e",document.getElementById("s1").text());
+                    //   Log.d("e",document1.getElementById("s1").text());
+                    //   name_of_section[0]=document.getElementById("s1").text();
+                    //
+                } catch (Exception e) {
+
+                    Log.d("e", "works fne");
+                    e.printStackTrace();
+                    Log.d("e", "problem");
+                }
+            }
+            return null;
+        }
+        @Override
+        protected void onPostExecute(Void aVoid)
+        {
+            super.onPostExecute(aVoid);
+        }
     }
 
 
