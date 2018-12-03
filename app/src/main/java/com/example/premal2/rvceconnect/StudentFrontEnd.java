@@ -72,10 +72,11 @@ public class StudentFrontEnd extends AppCompatActivity
     TextView t;
     Thread t3;
     fetchingtext s;
-    ImageView profilepic;
+    public static ImageView profilepic;
     TextToSpeech ttobj;
     FirebaseFirestore db;
 
+    public static String imageurl;
 
      /*An array that contains the list of permissions required by the app*/
     private String [] permissions = {android.Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.SEND_SMS};
@@ -133,8 +134,13 @@ public class StudentFrontEnd extends AppCompatActivity
                             @Override
                             public void run() {
                                 t.setTextSize(20);
-                                t.setText("Welcome premalsingh.cs16@rvce.edu.in !\nTap here to see personal information!");
-
+                                t.setText("Welcome "+mAuth.getCurrentUser().getEmail()+"!\nTap here to see personal information!");
+                                t.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View view) {
+                                        startActivity(new Intent(StudentFrontEnd.this,StudentInfo.class));
+                                    }
+                                });
 
                             }
                         });
@@ -472,13 +478,12 @@ public class StudentFrontEnd extends AppCompatActivity
         @Override
         protected void onPostExecute(Void aVoid)
         {
-            x.setVisibility(View.INVISIBLE);
-            profilepic.setVisibility(View.VISIBLE);
-            final String imageurl;
             db.collection("pics").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                 @Override
                 public void onComplete(@NonNull Task<QuerySnapshot> task) {
                     if (task.isSuccessful()) {
+
+                        x.setVisibility(View.INVISIBLE);
                         for (DocumentSnapshot document : task.getResult()) {
                             Log.d("e", document.getId() + " => " + document.getData());
 
@@ -494,6 +499,8 @@ public class StudentFrontEnd extends AppCompatActivity
                                 {
                                     Log.d("e",me.getKey()+":");
                                     Log.d("e",me.getValue()+"");
+                                    imageurl=me.getValue()+"";
+                                    profilepic.setVisibility(View.VISIBLE);
                                     Glide.with(getApplicationContext())
                                             .load(me.getValue())
                                             .into(profilepic);
@@ -525,82 +532,32 @@ public class StudentFrontEnd extends AppCompatActivity
         protected Void doInBackground(Void... voids)
         {
             //            String url="https://rvconnect.000webhostapp.com/connect.php?query=SELECT coursewise.course,coursewise.classatd,coursewise.totalclass,coursewise.quiz1,coursewise.test1,coursewise.quiz2,coursewise.test2,coursewise.quiz3,coursewise.test3 FROM student_pro INNER JOIN coursewise ON student_pro.p_usn=coursewise.usn WHERE student_pro.rvcemailid='premalsingh.cs16@rvce.edu.in'";
-            String url="http://192.168.43.110/connect.php?query=SELECT%20course_cgpa.courseid,course_cgpa.classatd,course_cgpa.totalclass,course_cgpa.quiz1,course_cgpa.test1,course_cgpa.quiz2,course_cgpa.test2,course_cgpa.quiz3,course_cgpa.test3%20FROM%20student_pro%20INNER%20JOIN%20course_cgpa%20ON%20student_pro.usn=course_cgpa.usn%20WHERE%20student_pro.rvcemailid=%27premalsingh.cs16@rvce.edu.in%27";
+            String url="http://192.168.43.110/connect.php?query=SELECT%20course_cgpa.courseid,course_cgpa.classatd,course_cgpa.totalclass,course_cgpa.quiz1,course_cgpa.test1,course_cgpa.quiz2,course_cgpa.test2,course_cgpa.quiz3,course_cgpa.test3%20FROM%20student_pro%20INNER%20JOIN%20course_cgpa%20ON%20student_pro.usn=course_cgpa.usn%20WHERE%20student_pro.rvcemailid=%27"+mAuth.getCurrentUser().getEmail()+"%27";
 
             Log.d("e","works fine");
             try {
                 org.jsoup.nodes.Document document = Jsoup.connect(url).get();
-                Log.d("e","works fine");
-                Log.d("r",document.getElementById("s1t").text());
-                Log.d("e","works fine");
-                AttendanceBack.classes_attended[0]=Integer.parseInt(document.getElementById("s1a").text());
-                Log.d("e","works fine");
-                Log.d("r",AttendanceBack.classes_attended[0]+" ");
-                AttendanceBack.classes_attended[1]=Integer.parseInt(document.getElementById("s2a").text());
-                AttendanceBack.classes_attended[2]=Integer.parseInt(document.getElementById("s3a").text());
-                AttendanceBack.classes_attended[3]=Integer.parseInt(document.getElementById("s4a").text());
-                AttendanceBack.classes_attended[4]=Integer.parseInt(document.getElementById("s5a").text());
-                AttendanceBack.classes_attended[5]=Integer.parseInt(document.getElementById("s6a").text());
-                AttendanceBack.classes_attended[6]=Integer.parseInt(document.getElementById("s7a").text());
-                AttendanceBack.classes_held[0]=Integer.parseInt(document.getElementById("s1t").text());
-                AttendanceBack.classes_held[1]=Integer.parseInt(document.getElementById("s2t").text());
-                AttendanceBack.classes_held[2]=Integer.parseInt(document.getElementById("s3t").text());
-                AttendanceBack.classes_held[3]=Integer.parseInt(document.getElementById("s4t").text());
-                AttendanceBack.classes_held[4]=Integer.parseInt(document.getElementById("s5t").text());
-                AttendanceBack.classes_held[5]=Integer.parseInt(document.getElementById("s6t").text());
-                AttendanceBack.classes_held[6]=Integer.parseInt(document.getElementById("s7t").text());
-                Log.d("e","works fine3");
-                TestScoreBack.quiz1_score[0]=Integer.parseInt(document.getElementById("s1q1").text());
-                TestScoreBack.quiz1_score[1]=Integer.parseInt(document.getElementById("s2q1").text());
-                TestScoreBack.quiz1_score[2]=Integer.parseInt(document.getElementById("s3q1").text());
-                TestScoreBack.quiz1_score[3]=Integer.parseInt(document.getElementById("s4q1").text());
-                TestScoreBack.quiz1_score[4]=Integer.parseInt(document.getElementById("s5q1").text());
-                TestScoreBack.quiz1_score[5]=Integer.parseInt(document.getElementById("s6q1").text());
-                TestScoreBack.quiz1_score[6]=Integer.parseInt(document.getElementById("s7q1").text());
-
-                TestScoreBack.test1_score[0]=Integer.parseInt(document.getElementById("s1t1").text());
-                TestScoreBack.test1_score[1]=Integer.parseInt(document.getElementById("s2t1").text());
-                TestScoreBack.test1_score[2]=Integer.parseInt(document.getElementById("s3t1").text());
-                TestScoreBack.test1_score[3]=Integer.parseInt(document.getElementById("s4t1").text());
-                TestScoreBack.test1_score[4]=Integer.parseInt(document.getElementById("s5t1").text());
-                TestScoreBack.test1_score[5]=Integer.parseInt(document.getElementById("s6t1").text());
-                TestScoreBack.test1_score[6]=Integer.parseInt(document.getElementById("s7t1").text());
-                TestScoreBack.quiz2_score[0]=Integer.parseInt(document.getElementById("s1q2").text());
-                TestScoreBack.quiz2_score[1]=Integer.parseInt(document.getElementById("s2q2").text());
-                TestScoreBack.quiz2_score[2]=Integer.parseInt(document.getElementById("s3q2").text());
-                TestScoreBack.quiz2_score[3]=Integer.parseInt(document.getElementById("s4q2").text());
-                TestScoreBack.quiz2_score[4]=Integer.parseInt(document.getElementById("s5q2").text());
-                TestScoreBack.quiz2_score[5]=Integer.parseInt(document.getElementById("s6q2").text());
-                TestScoreBack.quiz2_score[6]=Integer.parseInt(document.getElementById("s7q2").text());
-
-                TestScoreBack.test2_score[0]=Integer.parseInt(document.getElementById("s1t2").text());
-                TestScoreBack.test2_score[1]=Integer.parseInt(document.getElementById("s2t2").text());
-                TestScoreBack.test2_score[2]=Integer.parseInt(document.getElementById("s3t2").text());
-                TestScoreBack.test2_score[3]=Integer.parseInt(document.getElementById("s4t2").text());
-                TestScoreBack.test2_score[4]=Integer.parseInt(document.getElementById("s5t2").text());
-                TestScoreBack.test2_score[5]=Integer.parseInt(document.getElementById("s6t2").text());
-                TestScoreBack.test2_score[6]=Integer.parseInt(document.getElementById("s7t2").text());
-                TestScoreBack.quiz3_score[0]=Integer.parseInt(document.getElementById("s1q3").text());
-                TestScoreBack.quiz3_score[1]=Integer.parseInt(document.getElementById("s2q3").text());
-                TestScoreBack.quiz3_score[2]=Integer.parseInt(document.getElementById("s3q3").text());
-                TestScoreBack.quiz3_score[3]=Integer.parseInt(document.getElementById("s4q3").text());
-                TestScoreBack.quiz3_score[4]=Integer.parseInt(document.getElementById("s5q3").text());
-                TestScoreBack.quiz3_score[5]=Integer.parseInt(document.getElementById("s6q3").text());
-                TestScoreBack.quiz3_score[6]=Integer.parseInt(document.getElementById("s7q3").text());
-
-                TestScoreBack.test3_score[0]=Integer.parseInt(document.getElementById("s1t3").text());
-                TestScoreBack.test3_score[1]=Integer.parseInt(document.getElementById("s2t3").text());
-                TestScoreBack.test3_score[2]=Integer.parseInt(document.getElementById("s3t3").text());
-                TestScoreBack.test3_score[3]=Integer.parseInt(document.getElementById("s4t3").text());
-                TestScoreBack.test3_score[4]=Integer.parseInt(document.getElementById("s5t3").text());
-                TestScoreBack.test3_score[5]=Integer.parseInt(document.getElementById("s6t3").text());
-                TestScoreBack.test3_score[6]=Integer.parseInt(document.getElementById("s7t3").text());
-                Log.d("e","works good till here");
+                int i;
+                for(i=0;i<7;i++)
+                    AttendanceBack.classes_attended[i]=Integer.parseInt(document.getElementById("s"+String.valueOf(i+1)+"a").text());
+                for(i=0;i<7;i++)
+                    AttendanceBack.classes_held[i]=Integer.parseInt(document.getElementById("s"+String.valueOf(i+1)+"t").text());
+                for(i=0;i<7;i++)
+                    TestScoreBack.quiz1_score[i]=Integer.parseInt(document.getElementById("s"+String.valueOf(i+1)+"q1").text());
+                for(i=0;i<7;i++)
+                    TestScoreBack.test1_score[i]=Integer.parseInt(document.getElementById("s"+String.valueOf(i+1)+"t1").text());
+                for(i=0;i<7;i++)
+                    TestScoreBack.quiz2_score[i]=Integer.parseInt(document.getElementById("s"+String.valueOf(i+1)+"q2").text());
+                for(i=0;i<7;i++)
+                    TestScoreBack.test2_score[i]=Integer.parseInt(document.getElementById("s"+String.valueOf(i+1)+"t2").text());
+                for(i=0;i<7;i++)
+                    TestScoreBack.quiz3_score[i]=Integer.parseInt(document.getElementById("s"+String.valueOf(i+1)+"q3").text());
+                for(i=0;i<7;i++)
+                    TestScoreBack.test3_score[i]=Integer.parseInt(document.getElementById("s"+String.valueOf(i+1)+"t3").text());
             }
             catch (Exception e)
             {
                 z=2;
-                Log.d("e","problem");
             }
             return null;
         }
@@ -612,7 +569,6 @@ public class StudentFrontEnd extends AppCompatActivity
                 x.setVisibility(View.INVISIBLE);
                 profilepic.setVisibility(View.VISIBLE);
                 AlertDialog.Builder builder = new AlertDialog.Builder(StudentFrontEnd.this);
-
                 builder.setTitle("Connection Failed");
                 builder.setMessage("Connection to 192.168.43.110 (Application Datacenter) failed! Please make sure you are connected to STUDENT WiFi.");
                 builder.setCancelable(false);
