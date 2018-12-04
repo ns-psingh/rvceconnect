@@ -2,8 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.premal2.rvceconnect">
 
-    <uses-permission android:name="android.permission.SEND_SMS"/>
+    <uses-permission android:name="android.permission.SEND_SMS" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
         android:allowBackup="true"
@@ -27,7 +28,13 @@
             android:label="@string/title_activity_teacher_front_end" />
         <activity android:name=".TeacherAttendanceUpdate" />
         <activity android:name=".counsellor_student_view" />
-        <activity android:name=".TeacherStudentGaurdianContact"></activity>
+        <activity android:name=".TeacherStudentGaurdianContact" />
+        <activity android:name=".StudentInfo" />
+        <activity android:name=".AdminFrontEnd" />
+        <activity android:name=".DeveloperInfo" />
+        <activity android:name=".Usercreation" />
+        <activity android:name=".FacingIssues" />
+        <activity android:name=".AdminMessages"></activity>
     </application>
 
 </manifest>

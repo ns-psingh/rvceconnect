@@ -44,6 +44,9 @@ public class TestScoreBack extends Fragment
     static int[] quiz1_score=new int[]{0,0,0,0,0,0,0};
     static int[] quiz2_score=new int[]{0,0,0,0,0,0,0};
     static int[] quiz3_score=new int[]{0,0,0,0,0,0,0};
+    static double[] studentsgpa=new double[]{0.0,0.0,0.0,0.0};
+    static double[] toppersgpa=new double[]{0.0,0.0,0.0,0.0};
+    static double[] averagesgpa=new double[]{0.0,0.0,0.0,0.0};
     public View onCreateView(final LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
         /*inflate the testscore backend*/
@@ -84,9 +87,9 @@ public class TestScoreBack extends Fragment
 
 
         /*initialise the student sgpa into an array */
-        final double[] studentsgpa=new double[]{9.4,9.2,9.44,9.46};
-        final double[] toppersgpa =new double[]{10,9.92,9.8,9.84};
-        final double[] averagesgpa =new double[]{8,9.2,9.3,8.5};
+        //static double[] studentsgpa=new double[]{9.4,9.2,9.44,9.46};
+       // static double[] toppersgpa =new double[]{10,9.92,9.8,9.84};
+    //    static double[] averagesgpa =new double[]{8,9.2,9.3,8.5};
         /*the color array that will hold the color options */
 
 

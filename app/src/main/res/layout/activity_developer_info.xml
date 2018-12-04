@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/craftybackgroundsmall"
+    tools:context=".AdminFrontEnd">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="355dp"
+        android:layout_height="414dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="57dp"
+        android:background="@android:drawable/spinner_background"
+        tools:context="@mipmap/profile_cover">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/shubham"
+            android:layout_width="92dp"
+            android:layout_height="79dp"
+            android:layout_alignStart="@+id/notif"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/ads"
+            app:civ_border_color="#FF000000"
+            app:civ_border_width="2dp" />
+
+        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/notif"
+            android:layout_width="92dp"
+            android:layout_height="79dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="17dp"
+            android:layout_marginTop="49dp"
+            android:src="@mipmap/ads"
+            app:civ_border_color="#FF000000"
+            app:civ_border_width="2dp" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignTop="@+id/notif"
+            android:layout_marginEnd="84dp"
+            android:text="Premal Singh"
+            android:textColor="@android:color/background_dark"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/notif"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="-25dp"
+            android:layout_marginStart="76dp"
+            android:text="This App has been developed by:" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="34dp"
+            android:layout_height="29dp"
+            android:layout_alignBottom="@+id/notif"
+            android:layout_alignStart="@+id/textView"
+            app:srcCompat="@mipmap/facebook" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="wrap_content"
+            android:layout_height="29dp"
+            android:layout_alignBottom="@+id/notif"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="131dp"
+            app:srcCompat="@mipmap/email" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="31dp"
+            android:layout_height="34dp"
+            android:layout_alignBottom="@+id/notif"
+            android:layout_alignEnd="@+id/textView4"
+            android:layout_marginEnd="17dp"
+            app:srcCompat="@mipmap/linkedin" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="34dp"
+            android:layout_height="36dp"
+            android:layout_alignBottom="@+id/notif"
+            android:layout_toEndOf="@+id/textView4"
+            app:srcCompat="@mipmap/github" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/textView"
+            android:layout_alignTop="@+id/shubham"
+            android:text="Shubham Phal"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused"
+            android:textSize="24sp" />
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="36dp"
+            android:layout_height="33dp"
+            android:layout_alignBottom="@+id/shubham"
+            android:layout_alignStart="@+id/textView"
+            app:srcCompat="@mipmap/facebook" />
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="32dp"
+            android:layout_height="34dp"
+            android:layout_alignBottom="@+id/shubham"
+            android:layout_alignStart="@+id/imageView3"
+            app:srcCompat="@mipmap/email" />
+
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="31dp"
+            android:layout_height="29dp"
+            android:layout_alignBottom="@+id/shubham"
+            android:layout_alignEnd="@+id/textView8"
+            android:layout_marginEnd="18dp"
+            app:srcCompat="@mipmap/linkedin" />
+
+        <ImageView
+            android:id="@+id/imageView9"
+            android:layout_width="32dp"
+            android:layout_height="38dp"
+            android:layout_alignBottom="@+id/shubham"
+            android:layout_toEndOf="@+id/textView4"
+            app:srcCompat="@mipmap/github" />
+
+        <ImageView
+            android:id="@+id/imageView10"
+            android:layout_width="77dp"
+            android:layout_height="68dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignStart="@+id/notif"
+            android:layout_marginBottom="72dp"
+            app:srcCompat="@mipmap/github" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="209dp"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/imageView5"
+            android:layout_alignTop="@+id/imageView10"
+            android:text="This is an open-source Android project. Source Code is available at www.github.com/premalinsgh/rvceconnect"
+            android:textColor="@android:color/background_dark" />
+
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="62dp"
+        android:layout_height="52dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        app:srcCompat="@drawable/ic_home_black_24dp" />
+
+    <TextView
+        android:id="@+id/adm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/imageView"
+        android:text="Administration Panel"
+        android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/logout"
+        android:layout_width="wrap_content"
+        android:layout_height="38dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:text="LOGOUT" />
+</RelativeLayout>

@@ -167,6 +167,14 @@ public class StudentFrontEnd extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_front_end);
         mAuth=FirebaseAuth.getInstance(); //mAuth assigned current user
+        Log.d("e",mAuth.getCurrentUser().getEmail());
+        if(mAuth.getCurrentUser().getEmail().equals("sowmyaranicn@rvce.edu.in"))
+        {
+            mAuth.signOut();
+
+            startActivity(new Intent(StudentFrontEnd.this,MainActivity.class));
+        }
+        Log.d("e","doesnt");
          db=FirebaseFirestore.getInstance();
         profilepic=(ImageView) findViewById(R.id.profilepic); //Profile pic image loaded
         profilepic.setVisibility(View.INVISIBLE); //Set invisible

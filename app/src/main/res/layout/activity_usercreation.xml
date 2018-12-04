@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/craftybackgroundsmall"
+    tools:context=".AdminFrontEnd">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="355dp"
+        android:layout_height="414dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="57dp"
+        android:background="@android:drawable/spinner_background"
+        tools:context="@mipmap/profile_cover">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:backgroundTint="@android:color/darker_gray"
+        android:orientation="vertical"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:alpha="1"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Enter All Details:"
+                android:textSize="18sp" />
+            <EditText
+                android:id="@+id/firstname"
+                android:layout_width="311dp"
+                android:layout_height="match_parent"
+                android:background="@android:drawable/editbox_dropdown_light_frame"
+                android:ems="10"
+                android:hint="Enter First Name"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/lastname"
+                android:layout_width="311dp"
+                android:layout_height="match_parent"
+                android:background="@android:drawable/editbox_dropdown_light_frame"
+                android:ems="10"
+                android:hint="Enter Last Name"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/emailid"
+                android:layout_width="311dp"
+                android:layout_height="match_parent"
+                android:background="@android:drawable/editbox_dropdown_light_frame"
+                android:ems="10"
+                android:hint="Enter RVCE Mail ID"
+                android:inputType="textEmailAddress" />
+            <EditText
+                android:id="@+id/password"
+                android:layout_width="314dp"
+                android:layout_height="wrap_content"
+                android:background="@android:drawable/editbox_dropdown_light_frame"
+                android:ems="10"
+                android:hint="Enter Password"
+                android:inputType="textPassword" />
+            <EditText
+                android:id="@+id/password2"
+                android:layout_width="314dp"
+                android:layout_height="wrap_content"
+                android:background="@android:drawable/editbox_dropdown_light_frame"
+                android:ems="10"
+                android:hint="Re-enter Password"
+                android:inputType="textPassword" />
+            <EditText
+                android:id="@+id/bdate"
+                android:layout_width="311dp"
+                android:layout_height="match_parent"
+                android:background="@android:drawable/editbox_dropdown_light_frame"
+                android:ems="10"
+                android:hint="Enter Date of Birth (YYYY-MM-DD)"
+                android:inputType="textPersonName" />
+            <EditText
+                android:id="@+id/categ"
+                android:layout_width="311dp"
+                android:layout_height="match_parent"
+                android:background="@android:drawable/editbox_dropdown_light_frame"
+                android:ems="10"
+                android:hint="Enter Admission Category (CMD/CET/MQ)"
+                android:inputType="textPersonName" />
+            <EditText
+                android:id="@+id/bloodgroup"
+                android:layout_width="311dp"
+                android:layout_height="match_parent"
+                android:background="@android:drawable/editbox_dropdown_light_frame"
+                android:ems="10"
+                android:hint="Enter Blood Group"
+                android:inputType="textPersonName" />
+            <EditText
+                android:id="@+id/phoneno1"
+                android:layout_width="311dp"
+                android:layout_height="match_parent"
+                android:background="@android:drawable/editbox_dropdown_light_frame"
+                android:ems="10"
+                android:hint="Enter Mobile Number"
+                android:inputType="number" />
+            <EditText
+                android:id="@+id/phoneno2"
+                android:layout_width="311dp"
+                android:layout_height="match_parent"
+                android:background="@android:drawable/editbox_dropdown_light_frame"
+                android:ems="10"
+                android:hint="Enter Alternate Mobile Number"
+                android:inputType="number" />
+            <EditText
+                android:id="@+id/address"
+                android:layout_width="311dp"
+                android:layout_height="match_parent"
+                android:background="@android:drawable/editbox_dropdown_light_frame"
+                android:ems="10"
+                android:hint="Enter Address"
+                android:inputType="textPersonName" />
+            <EditText
+                android:id="@+id/dept"
+                android:layout_width="311dp"
+                android:layout_height="match_parent"
+                android:background="@android:drawable/editbox_dropdown_light_frame"
+                android:ems="10"
+                android:hint="Enter Department"
+                android:inputType="textPersonName" />
+            <EditText
+                android:id="@+id/counsellor"
+                android:layout_width="311dp"
+                android:layout_height="match_parent"
+                android:background="@android:drawable/editbox_dropdown_light_frame"
+                android:ems="10"
+                android:hint="Enter Counsellor (Code)"
+                android:inputType="textPersonName" />
+            <EditText
+                android:id="@+id/scheme"
+                android:layout_width="311dp"
+                android:layout_height="match_parent"
+                android:background="@android:drawable/editbox_dropdown_light_frame"
+                android:ems="10"
+                android:hint="Enter Scheme"
+                android:inputType="number" />
+            <EditText
+                android:id="@+id/usn"
+                android:layout_width="311dp"
+                android:layout_height="match_parent"
+                android:background="@android:drawable/editbox_dropdown_light_frame"
+                android:ems="10"
+                android:hint="Enter USN"
+                android:inputType="textPersonName" />
+            <EditText
+                android:id="@+id/sem"
+                android:layout_width="311dp"
+                android:layout_height="match_parent"
+                android:background="@android:drawable/editbox_dropdown_light_frame"
+                android:ems="10"
+                android:hint="Enter Semester"
+                android:inputType="number" />
+            <EditText
+                android:id="@+id/section"
+                android:layout_width="311dp"
+                android:layout_height="match_parent"
+                android:background="@android:drawable/editbox_dropdown_light_frame"
+                android:ems="10"
+                android:hint="Enter Section"
+                android:inputType="textPersonName" />
+
+            <Button
+                android:layout_width="314dp"
+                android:layout_height="wrap_content"
+                android:text="UPLOAD PROFILE PIC" />
+
+            <Button
+                android:id="@+id/create_account"
+                android:layout_width="314dp"
+                android:layout_height="wrap_content"
+                android:text="CREATE ACCOUNT" />
+
+            <ProgressBar
+                android:id="@+id/process"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="62dp"
+        android:layout_height="52dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        app:srcCompat="@drawable/ic_home_black_24dp" />
+
+    <TextView
+        android:id="@+id/adm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/imageView"
+        android:text="Administration Panel"
+        android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/logout"
+        android:layout_width="wrap_content"
+        android:layout_height="38dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:text="LOGOUT" />
+</RelativeLayout>

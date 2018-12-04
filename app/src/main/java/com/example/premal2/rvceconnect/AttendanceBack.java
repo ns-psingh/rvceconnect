@@ -23,10 +23,13 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+import java.security.KeyStore;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.math.*;
+import java.util.Map;
+import java.util.Set;
 
 public class AttendanceBack extends Fragment
 {
@@ -35,14 +38,13 @@ public class AttendanceBack extends Fragment
   static int[] classes_held=new int[]{1,1,1,1,1,1,1};
     public View onCreateView(final LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
-      Log.d("e","fuck");
 
       /*color of progress bar*/
       int[] progress_color=new int[]{Color.BLUE,Color.MAGENTA,Color.YELLOW,Color.RED,Color.GREEN,Color.CYAN};
 
 
       /*temporary array that holds the list of subjects*/
-      String[] subjects=new String[]{"MATHS","DBMS","MCES","PSQ","CCN","IPRE","SE"};
+      String[] subjects=new String[]{"IPRE","DBMS","MCES","SE","CCN","ANN","OT"};
 
 
        /*temporary array that holds the number of classes attended*/
@@ -67,16 +69,21 @@ public class AttendanceBack extends Fragment
 
       /*this hashmap will hold a mapping of subject names to percentage of attendance corressponding to it*/
       HashMap<String,Integer> subject_to_attendance_map =new HashMap<>();
+      Log.d("e","number="+number_of_subjects);
       for(int i=0;i<number_of_subjects;i++)
       {
+          //Log.d("e",classes_attended[i]+" "+classes_held[i]);
         /*populate the hashmap with values */
-        subject_to_attendance_map.put(subjectnames.get(i),Math.round((classes_attended[i]*100/classes_held[i])));
+        int y=Math.round((classes_attended[i]*100/classes_held[i]));
+       // Log.d("e",Math.round(y)+" ");
+        subject_to_attendance_map.put(subjectnames.get(i),y);
+
+       // Log.d("e",Math.round(y)+" ");
 
       }
-
-
-
-
+      Set<Map.Entry<String,Integer>> hashset=subject_to_attendance_map.entrySet();
+      for(Map.Entry entry:hashset)
+        Log.d("e",entry.getValue()+"");
         /*Connect with frontend(attendance_back.xml)*/
       final View atnbackview=inflater.inflate(R.layout.attendance_back, container, false);
 

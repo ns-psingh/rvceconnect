@@ -16,7 +16,7 @@ public class AdminFrontEnd extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_front_end);
-        CircleImageView notif=(CircleImageView) findViewById(R.id.premal);
+        CircleImageView notif=(CircleImageView) findViewById(R.id.notif);
         CircleImageView create=(CircleImageView) findViewById(R.id.reg_user);
         CircleImageView dev=(CircleImageView) findViewById(R.id.contactdev);
         dev.setOnClickListener(new View.OnClickListener() {
@@ -29,6 +29,12 @@ public class AdminFrontEnd extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(AdminFrontEnd.this,Usercreation.class));
+            }
+        });
+        notif.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(AdminFrontEnd.this,AdminMessages.class));
             }
         });
         Button logout=(Button) findViewById(R.id.logout);
