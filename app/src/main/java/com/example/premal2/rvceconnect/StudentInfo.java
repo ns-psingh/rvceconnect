@@ -40,6 +40,8 @@ public class StudentInfo extends AppCompatActivity {
     FirebaseAuth mAuth;
     ProgressBar prog;
     Button logout;
+    Button pwd;
+    Button edit;
     public class background extends AsyncTask<Void,Void,Void>
     {
         @Override
@@ -135,6 +137,23 @@ public class StudentInfo extends AppCompatActivity {
                 mAuth.signOut();
 
                 startActivity(new Intent(StudentInfo.this,MainActivity.class));
+            }
+        });
+        pwd=(Button) findViewById(R.id.changepwd);
+        pwd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                MainActivity.stat=1;
+                startActivity(new Intent(StudentInfo.this,FacingIssues.class));
+            }
+        });
+        edit=(Button) findViewById(R.id.edit);
+        edit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                MainActivity.stat=2;
+                startActivity(new Intent(StudentInfo.this,FacingIssues.class));
             }
         });
         new background().execute();
